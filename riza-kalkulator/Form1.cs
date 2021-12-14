@@ -28,18 +28,22 @@ namespace riza_kalkulator
 
         //Varijable
         public double izabranaVrednostPapir1 = 0;
+        public Papiri izabranPapir1;
         public double kolicinaPapir1 = 0;
         public double sumaPapir1 = 0;
 
         public double izabranaVrednostPapir2 = 0;
+        public Papiri izabranPapir2;
         public double kolicinaPapir2 = 0;
         public double sumaPapir2 = 0;
 
         public double izabranaVrednostPapir3 = 0;
+        public Papiri izabranPapir3;
         public double kolicinaPapir3 = 0;
         public double sumaPapir3 = 0;
 
         public double izabranaVrednostPapir4 = 0;
+        public Papiri izabranPapir4;
         public double kolicinaPapir4 = 0;
         public double sumaPapir4 = 0;
 
@@ -267,12 +271,15 @@ namespace riza_kalkulator
             }
         }
 
-        public void odabirPapira(ComboBox comboBox,Label labela,double izabranaVrednostPapir,double sumaPapir,double kolicinaPapir)
+        public Papiri odabirPapira(ComboBox comboBox,Label labela,double izabranaVrednostPapir,double sumaPapir,double kolicinaPapir)
         {
+            Papiri izabranPapir=null;
+
             for (int i = 0; i < countPapiri; i++)
             {
                 if (comboBox.SelectedItem.Equals(nizPapira[i].nazivPapira))
                 {
+                    izabranPapir = nizPapira[i];
                     izabranaVrednostPapir = nizPapira[i].ukupnaVrednost;
                     break;
                 }
@@ -282,9 +289,10 @@ namespace riza_kalkulator
 
             labela.Text = sumaPapir.ToString("0.00");
             labela.Text += " rsd.";
+            return izabranPapir;
         }
 
-        public double kolicinaPapira(ComboBox comboBox, Label labela, TextBox textBox, double sumaPapir,double kolicinaPapir,double izabranaVrednostPapir)
+        public (double,double) kolicinaPapira(ComboBox comboBox, Label labela, TextBox textBox, double sumaPapir,double kolicinaPapir,double izabranaVrednostPapir)
         {
             int vrednost;
             bool success = Int32.TryParse(textBox.Text, out vrednost);
@@ -325,18 +333,18 @@ namespace riza_kalkulator
             labela.Text = sumaPapir.ToString("0.00");
             labela.Text += " rsd.";
 
-            return sumaPapir;
+            return (sumaPapir,kolicinaPapir);
         }
 
         //PAPIR 1
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            odabirPapira(comboBox1,label3,izabranaVrednostPapir1,sumaPapir1,kolicinaPapir1);
+            izabranPapir1=odabirPapira(comboBox1,label3,izabranaVrednostPapir1,sumaPapir1,kolicinaPapir1);
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            sumaPapir1=kolicinaPapira(comboBox1, label3, textBox1, sumaPapir1, kolicinaPapir1, izabranaVrednostPapir1);
+            (sumaPapir1,kolicinaPapir1) = kolicinaPapira(comboBox1, label3, textBox1, sumaPapir1, kolicinaPapir1, izabranaVrednostPapir1);
         }
         //PAPIR 2
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -358,12 +366,12 @@ namespace riza_kalkulator
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            odabirPapira(comboBox2, label7, izabranaVrednostPapir2, sumaPapir2, kolicinaPapir2);
+            izabranPapir2=odabirPapira(comboBox2, label7, izabranaVrednostPapir2, sumaPapir2, kolicinaPapir2);
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            sumaPapir2 = kolicinaPapira(comboBox2, label7, textBox2, sumaPapir2, kolicinaPapir2, izabranaVrednostPapir2);
+            (sumaPapir2,kolicinaPapir2) = kolicinaPapira(comboBox2, label7, textBox2, sumaPapir2, kolicinaPapir2, izabranaVrednostPapir2);
         }
 
         //PAPIR 3
@@ -386,12 +394,12 @@ namespace riza_kalkulator
 
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
-            odabirPapira(comboBox3, label10, izabranaVrednostPapir3, sumaPapir3, kolicinaPapir3);
+            izabranPapir3=odabirPapira(comboBox3, label10, izabranaVrednostPapir3, sumaPapir3, kolicinaPapir3);
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
-            sumaPapir3 = kolicinaPapira(comboBox3, label10, textBox3, sumaPapir3, kolicinaPapir3, izabranaVrednostPapir3);
+            (sumaPapir3,kolicinaPapir3) = kolicinaPapira(comboBox3, label10, textBox3, sumaPapir3, kolicinaPapir3, izabranaVrednostPapir3);
         }
         //PAPIR 4
         private void checkBox3_CheckedChanged(object sender, EventArgs e)
@@ -413,12 +421,12 @@ namespace riza_kalkulator
 
         private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
         {
-            odabirPapira(comboBox4, label14, izabranaVrednostPapir4, sumaPapir4, kolicinaPapir4);
+            izabranPapir4=odabirPapira(comboBox4, label14, izabranaVrednostPapir4, sumaPapir4, kolicinaPapir4);
         }
 
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
-            sumaPapir4 = kolicinaPapira(comboBox4, label14, textBox4, sumaPapir4, kolicinaPapir2, izabranaVrednostPapir4);
+            (sumaPapir4,kolicinaPapir4) = kolicinaPapira(comboBox4, label14, textBox4, sumaPapir4, kolicinaPapir2, izabranaVrednostPapir4);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -439,6 +447,8 @@ namespace riza_kalkulator
                  +  sumaPapir4;
 
             textBox5.Text = suma.ToString("0.00") + " rsd.";
+
+            
         }
     }
 }
