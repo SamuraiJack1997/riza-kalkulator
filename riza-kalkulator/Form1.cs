@@ -29,36 +29,41 @@ namespace riza_kalkulator
         //Varijable
         public double izabranaVrednostPapir1 = 0;
         public Papiri izabranPapir1;
-        public double kolicinaPapir1 = 0;
+        public double kolicinaPapir1 = 1;
         public double sumaPapir1 = 0;
 
         public double izabranaVrednostPapir2 = 0;
         public Papiri izabranPapir2;
-        public double kolicinaPapir2 = 0;
+        public double kolicinaPapir2 = 1;
         public double sumaPapir2 = 0;
 
         public double izabranaVrednostPapir3 = 0;
         public Papiri izabranPapir3;
-        public double kolicinaPapir3 = 0;
+        public double kolicinaPapir3 = 1;
         public double sumaPapir3 = 0;
 
         public double izabranaVrednostPapir4 = 0;
         public Papiri izabranPapir4;
-        public double kolicinaPapir4 = 0;
+        public double kolicinaPapir4 = 1;
         public double sumaPapir4 = 0;
 
         public double vrednostPripreme = 0;
 
         public double izabranaVrednostPloce = 0;
+        public Ploce  izabranaPloca;
         public double kolicinaPloca = 0;
         public double sumaPloca = 0;
 
         public double izabranaVrednostPlastike = 0;
+        public Plastike izabranaPlastika;
         public double kolicinaPlastike = 0;
         public double sumaPlastike = 0;
 
-        public double vrednostPranjaMasina = 0;
         public double vrednostPripremePoPloci = 0;
+        public double vrednostPranjaMasina = 0;
+
+        public double sumaOtisaka = 0;
+        public double kolicinaOtisaka = 0;
 
         public double vrednostDorade = 0;
         public double vrednostFederPoveza = 0;
@@ -269,11 +274,58 @@ namespace riza_kalkulator
                 comboBox3.Items.Add(nizPapira[i].nazivPapira);
                 comboBox4.Items.Add(nizPapira[i].nazivPapira);
             }
+            for (int i = 0; i < countPloce; i++)
+            {
+                comboBox5.Items.Add(nizPloca[i].nazivPloce);
+            }
+            for (int i = 0; i < countPlastike; i++)
+            {
+                comboBox6.Items.Add(nizPlastika[i].nazivPlastike);
+            }
         }
 
-        public Papiri odabirPapira(ComboBox comboBox,Label labela,double izabranaVrednostPapir,double sumaPapir,double kolicinaPapir)
+        //SUMA
+        private void button2_Click(object sender, EventArgs e)
+        {
+            suma = 0.0;
+            if (textBox1.Text == "")
+            {
+                sumaPapir1 = 0.0;
+            }
+            if (textBox2.Text == "")
+            {
+                sumaPapir2 = 0.0;
+            }
+            if (textBox3.Text == "")
+            {
+                sumaPapir3 = 0.0;
+            }
+            if (textBox4.Text == "")
+            {
+                sumaPapir4 = 0.0;
+            }
+
+            suma += sumaPapir1
+                 + sumaPapir2
+                 + sumaPapir3
+                 + sumaPapir4
+                 + sumaPloca
+                 + vrednostPripremePoPloci
+                 + vrednostPranjaMasina
+                 + sumaOtisaka
+                 + vrednostFederPoveza
+                 + sumaPlastike;
+
+            textBox5.Text = suma.ToString("0.00") + " rsd.";
+
+        }
+        //ODABIR PAPIRA 
+        public Papiri odabirPapira(ComboBox comboBox,Label labela)
         {
             Papiri izabranPapir=null;
+            double izabranaVrednostPapir=0;
+            double sumaPapir=0;
+            double kolicinaPapir = 1;
 
             for (int i = 0; i < countPapiri; i++)
             {
@@ -291,9 +343,12 @@ namespace riza_kalkulator
             labela.Text += " rsd.";
             return izabranPapir;
         }
-
-        public (double,double) kolicinaPapira(ComboBox comboBox, Label labela, TextBox textBox, double sumaPapir,double kolicinaPapir,double izabranaVrednostPapir)
+        //KOLICINA PAPIRA
+        public (double,double) kolicinaPapira(ComboBox comboBox, Label labela, TextBox textBox)
         {
+            double izabranaVrednostPapir = 0;
+            double sumaPapir = 0;
+            double kolicinaPapir = 1;
             int vrednost;
             bool success = Int32.TryParse(textBox.Text, out vrednost);
             if (success)
@@ -335,16 +390,42 @@ namespace riza_kalkulator
 
             return (sumaPapir,kolicinaPapir);
         }
+        //UNOS VREDNOSTI
+
+        public double unosVrednosti(TextBox textBox,Label labela)
+        {
+            double unesenaVrednost=0, vrednost;
+            bool success = Double.TryParse(textBox.Text, out vrednost);
+            if (success)
+            {
+                unesenaVrednost = vrednost;
+            }
+            else
+            {
+                if (textBox.Text != "")
+                    MessageBox.Show("Nedozvoljen unos.");
+
+                textBox.Text = "";
+                labela.Text = "0.00 rsd.";
+            }
+
+            labela.Text = unesenaVrednost.ToString("0.00");
+            labela.Text += " rsd.";
+
+            return unesenaVrednost;
+        }
 
         //PAPIR 1
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            izabranPapir1=odabirPapira(comboBox1,label3,izabranaVrednostPapir1,sumaPapir1,kolicinaPapir1);
+            izabranPapir1=odabirPapira(comboBox1,label3);
+            izabranaVrednostPapir1 = izabranPapir1.ukupnaVrednost;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            (sumaPapir1,kolicinaPapir1) = kolicinaPapira(comboBox1, label3, textBox1, sumaPapir1, kolicinaPapir1, izabranaVrednostPapir1);
+            (sumaPapir1,kolicinaPapir1) = kolicinaPapira(comboBox1, label3, textBox1);
+            
         }
         //PAPIR 2
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -366,12 +447,13 @@ namespace riza_kalkulator
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            izabranPapir2=odabirPapira(comboBox2, label7, izabranaVrednostPapir2, sumaPapir2, kolicinaPapir2);
+            izabranPapir2=odabirPapira(comboBox2, label7);
+            izabranaVrednostPapir2 = izabranPapir2.ukupnaVrednost;
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            (sumaPapir2,kolicinaPapir2) = kolicinaPapira(comboBox2, label7, textBox2, sumaPapir2, kolicinaPapir2, izabranaVrednostPapir2);
+            (sumaPapir2,kolicinaPapir2) = kolicinaPapira(comboBox2, label7, textBox2);
         }
 
         //PAPIR 3
@@ -394,12 +476,13 @@ namespace riza_kalkulator
 
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
-            izabranPapir3=odabirPapira(comboBox3, label10, izabranaVrednostPapir3, sumaPapir3, kolicinaPapir3);
+            izabranPapir3=odabirPapira(comboBox3, label10);
+            izabranaVrednostPapir3 = izabranPapir3.ukupnaVrednost;
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
-            (sumaPapir3,kolicinaPapir3) = kolicinaPapira(comboBox3, label10, textBox3, sumaPapir3, kolicinaPapir3, izabranaVrednostPapir3);
+            (sumaPapir3,kolicinaPapir3) = kolicinaPapira(comboBox3, label10, textBox3);
         }
         //PAPIR 4
         private void checkBox3_CheckedChanged(object sender, EventArgs e)
@@ -421,34 +504,296 @@ namespace riza_kalkulator
 
         private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
         {
-            izabranPapir4=odabirPapira(comboBox4, label14, izabranaVrednostPapir4, sumaPapir4, kolicinaPapir4);
+            izabranPapir4=odabirPapira(comboBox4, label14);
+            izabranaVrednostPapir4 = izabranPapir4.ukupnaVrednost;
         }
 
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
-            (sumaPapir4,kolicinaPapir4) = kolicinaPapira(comboBox4, label14, textBox4, sumaPapir4, kolicinaPapir2, izabranaVrednostPapir4);
+            (sumaPapir4,kolicinaPapir4) = kolicinaPapira(comboBox4, label14, textBox4);
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        //PRIPREMA
+        private void checkBox4_CheckedChanged(object sender, EventArgs e)
         {
-            suma = 0.0;
-            if (textBox1.Text == "")
+            if (checkBox4.Checked)
             {
-                sumaPapir1 = 0.0;
+                textBox6.Enabled = true;
             }
-            if (textBox2.Text == "")
+            else
             {
-                sumaPapir2 = 0.0;
+                textBox6.Enabled = false;
+                textBox6.Text = "";
+                label20.Text = "0.00 rsd.";
+            }
+        }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+            vrednostPripreme = unosVrednosti(textBox6, label20);
+        }
+
+        //PLOCA
+        private void checkBox5_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox5.Checked)
+            {
+                comboBox5.Enabled = true;
+                textBox7.Enabled = true;
+            }
+            else
+            {
+                comboBox5.Enabled = false;
+                textBox7.Enabled = false;
+                textBox7.Text = "";
+                sumaPloca = 0;
+                label22.Text = "0.00 rsd.";
+            }
+        }
+
+        private void comboBox5_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            for (int i = 0; i < countPloce; i++)
+            {
+                if (comboBox5.SelectedItem.Equals(nizPloca[i].nazivPloce))
+                {
+                    izabranaPloca = nizPloca[i];
+                    izabranaVrednostPloce = nizPloca[i].cena;
+                    break;
+                }
             }
 
-            suma += sumaPapir1
-                 +  sumaPapir2
-                 +  sumaPapir3
-                 +  sumaPapir4;
+            sumaPloca = izabranaVrednostPloce * kolicinaPloca;
 
-            textBox5.Text = suma.ToString("0.00") + " rsd.";
+            label32.Text = "Količina*("+izabranaPloca.nazivPloce+": "+izabranaPloca.vrednost_otiska+"):";
+            label22.Text = sumaPloca.ToString("0.00");
+            label22.Text += " rsd.";
+        }
 
+        private void textBox7_TextChanged(object sender, EventArgs e)
+        {
+            int vrednost;
+            bool success = Int32.TryParse(textBox7.Text, out vrednost);
+            if (success)
+            {
+                kolicinaPloca = vrednost;
+            }
+            else
+            {
+                if (textBox7.Text != "")
+                    MessageBox.Show("Nedozvoljen unos.");
+
+                textBox7.Text = "";
+                label22.Text = "0.00 rsd.";
+            }
+
+
+            if (comboBox5.SelectedItem != null)
+            {
+                for (int i = 0; i < countPloce; i++)
+                {
+                    if (comboBox5.SelectedItem.Equals(nizPloca[i].nazivPloce))
+                    {
+                        izabranaPloca = nizPloca[i];
+                        izabranaVrednostPloce = nizPloca[i].cena;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Ploča nije izabrana.");
+            }
+
+            sumaPloca = izabranaVrednostPloce * kolicinaPloca;
+
+            label22.Text = sumaPloca.ToString("0.00");
+            label22.Text += " rsd.";
+        }
+        
+        //PRIPREMA PO PLOCI
+        private void checkBox6_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox6.Checked)
+            {
+                textBox8.Enabled = false;
+                textBox8.Text = sumaPloca.ToString("0.00");
+                label25.Text = sumaPloca.ToString("0.00")+" rsd.";
+                vrednostPripremePoPloci = sumaPloca;
+            }
+            else
+            {
+                vrednostPripremePoPloci = 0;
+                textBox8.Enabled = false;
+                textBox8.Text = "";
+                label25.Text = "0.00 rsd.";
+            }
+        }
+
+        //PRANJE MASINA
+        private void checkBox7_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox7.Checked)
+            {
+                textBox9.Enabled = true;
+            }
+            else
+            {
+                textBox9.Enabled = false;
+                textBox9.Text = "";
+                label28.Text = "0.00 rsd.";
+            }
+        }
+
+        private void textBox9_TextChanged(object sender, EventArgs e)
+        {
+            vrednostPranjaMasina = unosVrednosti(textBox9, label28);
+        }
+
+        //OTISCI
+        private void checkBox8_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox8.Checked)
+            {
+                textBox10.Enabled = true;
+
+            }
+            else
+            {
+                textBox10.Enabled = false;
+                textBox10.Text = "";
+                label31.Text = "0.00 rsd.";
+            }
+        }
+
+        private void textBox10_TextChanged(object sender, EventArgs e)
+        {
+            int vrednost;
+            bool success = Int32.TryParse(textBox10.Text, out vrednost);
+            if (success)
+            {
+                kolicinaOtisaka = vrednost;
+            }
+            else
+            {
+                if (textBox10.Text != "")
+                    MessageBox.Show("Nedozvoljen unos.");
+
+                textBox10.Text = "";
+                label31.Text = "0.00 rsd.";
+            }
+
+            if (!(izabranaPloca == null))
+            {
+                sumaOtisaka = izabranaPloca.vrednost_otiska * kolicinaOtisaka;
+            }
+            else
+            {
+                sumaOtisaka = 0;
+            }
             
+
+            label31.Text = sumaOtisaka.ToString("0.00");
+            label31.Text += " rsd.";
+        }
+
+        //FEDER POVEZ
+        private void checkBox9_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox9.Checked)
+            {
+                textBox11.Enabled = true;
+            }
+            else
+            {
+                textBox11.Enabled = false;
+                textBox11.Text = "";
+                label34.Text = "0.00 rsd.";
+            }
+        }
+
+        private void textBox11_TextChanged(object sender, EventArgs e)
+        {
+            vrednostFederPoveza = unosVrednosti(textBox11, label34);
+        }
+
+        //IZBOR PLASTIKE
+        private void checkBox10_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox10.Checked)
+            {
+                comboBox6.Enabled = true;
+                textBox12.Enabled = true;
+
+            }
+            else
+            {
+                comboBox6.Enabled = false;
+                textBox12.Enabled = false;
+                textBox12.Text = "";
+                label37.Text = "0.00 rsd.";
+            }
+        }
+
+        private void comboBox6_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            for (int i = 0; i < countPlastike; i++)
+            {
+                if (comboBox6.SelectedItem.Equals(nizPlastika[i].nazivPlastike))
+                {
+                    izabranaPlastika = nizPlastika[i];
+                    izabranaVrednostPlastike = nizPlastika[i].cena;
+                    break;
+                }
+            }
+
+            sumaPlastike = izabranaVrednostPlastike * kolicinaPlastike;
+
+            label38.Text = "Količina*("+ izabranaVrednostPlastike +" rsd.):";
+            label37.Text = sumaPlastike.ToString("0.00");
+            label37.Text += " rsd.";
+        }
+
+        private void textBox12_TextChanged(object sender, EventArgs e)
+        {
+            int vrednost;
+            bool success = Int32.TryParse(textBox12.Text, out vrednost);
+            if (success)
+            {
+                kolicinaPlastike = vrednost;
+            }
+            else
+            {
+                if (textBox12.Text != "")
+                    MessageBox.Show("Nedozvoljen unos.");
+
+                textBox12.Text = "";
+                label37.Text = "0.00 rsd.";
+            }
+
+
+            if (comboBox6.SelectedItem != null)
+            {
+                for (int i = 0; i < countPlastike; i++)
+                {
+                    if (comboBox6.SelectedItem.Equals(nizPlastika[i].nazivPlastike))
+                    {
+                        izabranaPlastika = nizPlastika[i];
+                        izabranaVrednostPlastike = nizPlastika[i].cena;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Plastika nije izabrana.");
+            }
+
+
+            sumaPlastike = izabranaVrednostPlastike * kolicinaPlastike;
+
+            label37.Text = sumaPlastike.ToString("0.00");
+            label37.Text += " rsd.";
         }
     }
 }
