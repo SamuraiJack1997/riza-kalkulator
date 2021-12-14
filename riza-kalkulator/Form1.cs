@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
 
+
 namespace riza_kalkulator
 {
     public partial class Form1 : Form
@@ -33,6 +34,14 @@ namespace riza_kalkulator
         public double izabranaVrednostPapir2 = 0;
         public double kolicinaPapir2 = 0;
         public double sumaPapir2 = 0;
+
+        public double izabranaVrednostPapir3 = 0;
+        public double kolicinaPapir3 = 0;
+        public double sumaPapir3 = 0;
+
+        public double izabranaVrednostPapir4 = 0;
+        public double kolicinaPapir4 = 0;
+        public double sumaPapir4 = 0;
 
         public double vrednostPripreme = 0;
 
@@ -248,6 +257,188 @@ namespace riza_kalkulator
         private void Form1_Load(object sender, EventArgs e)
         {
             getData();
+
+            for (int i = 0; i < countPapiri; i++)
+            {
+                comboBox1.Items.Add(nizPapira[i].nazivPapira);
+                comboBox2.Items.Add(nizPapira[i].nazivPapira);
+                comboBox3.Items.Add(nizPapira[i].nazivPapira);
+                comboBox4.Items.Add(nizPapira[i].nazivPapira);
+            }
+        }
+
+        public void odabirPapira(ComboBox comboBox,Label labela,double izabranaVrednostPapir,double sumaPapir,double kolicinaPapir)
+        {
+            for (int i = 0; i < countPapiri; i++)
+            {
+                if (comboBox.SelectedItem.Equals(nizPapira[i].nazivPapira))
+                {
+                    izabranaVrednostPapir = nizPapira[i].ukupnaVrednost;
+                    break;
+                }
+            }
+
+            sumaPapir = izabranaVrednostPapir * kolicinaPapir;
+
+            labela.Text = sumaPapir.ToString("0.00");
+            labela.Text += " rsd.";
+        }
+
+        public double kolicinaPapira(ComboBox comboBox, Label labela, TextBox textBox, double sumaPapir,double kolicinaPapir,double izabranaVrednostPapir)
+        {
+            int vrednost;
+            bool success = Int32.TryParse(textBox.Text, out vrednost);
+            if (success)
+            {
+                kolicinaPapir = vrednost;
+            }
+            else
+            {
+                if (textBox.Text != "")
+                    MessageBox.Show("Nedozvoljen unos.");
+
+                textBox.Text = "";
+                sumaPapir = 0;
+                labela.Text = "0.00 rsd.";
+            }
+
+
+            if (comboBox.SelectedItem != null)
+            {
+                for (int i = 0; i < countPapiri; i++)
+                {
+                    if (comboBox.SelectedItem.Equals(nizPapira[i].nazivPapira))
+                    {
+                        izabranaVrednostPapir = nizPapira[i].ukupnaVrednost;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Papir nije izabran.");
+            }
+
+
+            sumaPapir = izabranaVrednostPapir * kolicinaPapir;
+
+            labela.Text = sumaPapir.ToString("0.00");
+            labela.Text += " rsd.";
+
+            return sumaPapir;
+        }
+
+        //PAPIR 1
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            odabirPapira(comboBox1,label3,izabranaVrednostPapir1,sumaPapir1,kolicinaPapir1);
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            sumaPapir1=kolicinaPapira(comboBox1, label3, textBox1, sumaPapir1, kolicinaPapir1, izabranaVrednostPapir1);
+        }
+        //PAPIR 2
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                comboBox2.Enabled = true;
+                textBox2.Enabled = true;
+            }
+            else
+            {
+                comboBox2.Enabled = false;
+                textBox2.Enabled = false;
+                textBox2.Text = "";
+                sumaPapir2 = 0;
+                label7.Text = "0.00 rsd.";
+            }
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            odabirPapira(comboBox2, label7, izabranaVrednostPapir2, sumaPapir2, kolicinaPapir2);
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            sumaPapir2 = kolicinaPapira(comboBox2, label7, textBox2, sumaPapir2, kolicinaPapir2, izabranaVrednostPapir2);
+        }
+
+        //PAPIR 3
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox2.Checked)
+            {
+                comboBox3.Enabled = true;
+                textBox3.Enabled = true;
+            }
+            else
+            {
+                comboBox3.Enabled = false;
+                textBox3.Enabled = false;
+                textBox3.Text = "";
+                sumaPapir3 = 0;
+                label10.Text = "0.00 rsd.";
+            }
+        }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            odabirPapira(comboBox3, label10, izabranaVrednostPapir3, sumaPapir3, kolicinaPapir3);
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+            sumaPapir3 = kolicinaPapira(comboBox3, label10, textBox3, sumaPapir3, kolicinaPapir3, izabranaVrednostPapir3);
+        }
+        //PAPIR 4
+        private void checkBox3_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox3.Checked)
+            {
+                comboBox4.Enabled = true;
+                textBox4.Enabled = true;
+            }
+            else
+            {
+                comboBox4.Enabled = false;
+                textBox4.Enabled = false;
+                textBox4.Text = "";
+                sumaPapir4 = 0;
+                label14.Text = "0.00 rsd.";
+            }
+        }
+
+        private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            odabirPapira(comboBox4, label14, izabranaVrednostPapir4, sumaPapir4, kolicinaPapir4);
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+            sumaPapir4 = kolicinaPapira(comboBox4, label14, textBox4, sumaPapir4, kolicinaPapir2, izabranaVrednostPapir4);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            suma = 0.0;
+            if (textBox1.Text == "")
+            {
+                sumaPapir1 = 0.0;
+            }
+            if (textBox2.Text == "")
+            {
+                sumaPapir2 = 0.0;
+            }
+
+            suma += sumaPapir1
+                 +  sumaPapir2
+                 +  sumaPapir3
+                 +  sumaPapir4;
+
+            textBox5.Text = suma.ToString("0.00") + " rsd.";
         }
     }
 }
