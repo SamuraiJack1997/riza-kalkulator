@@ -12,6 +12,7 @@ using System.Data.OleDb;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 using System.IO;
+using Font = iTextSharp.text.Font;
 
 namespace riza_kalkulator
 {
@@ -1414,170 +1415,114 @@ namespace riza_kalkulator
             {
                 if(save.ShowDialog() == DialogResult.OK)
                 {
-                    iTextSharp.text.Document document = new iTextSharp.text.Document(PageSize.A4.Rotate());
+                    iTextSharp.text.Document document = new iTextSharp.text.Document(PageSize.A4,25,25,15,15);
                     try
                     {
                         PdfWriter.GetInstance(document, new FileStream(save.FileName, FileMode.Create));
+
+                        Font mainFont = FontFactory.GetFont(BaseFont.HELVETICA, BaseFont.CP1250, 11);
                         document.Open();
-                        document.AddTitle("Stamparija riza!");
-                        String racun="";
-                        racun += "Štamparija Riža:\n";
-                        racun += "_________________________________________________________________________________________\n";
+
+                        PdfPTable table = new PdfPTable(3);
+
+                        PdfPCell naslov = new PdfPCell(new Phrase("Štamparija Riža - Ponuda",mainFont));
+                        PdfPCell naziv = new PdfPCell(new Phrase("Naziv", mainFont));
+                        PdfPCell kolicina = new PdfPCell(new Phrase("Količina", mainFont));
+                        PdfPCell cena = new PdfPCell(new Phrase("Cena", mainFont));
+
+                        naslov.Colspan = 3;
+
+                        naslov.HorizontalAlignment = 1; //0=Left, 1=Centre, 2=Right
+                        naziv.HorizontalAlignment = 1;
+                        kolicina.HorizontalAlignment = 1;
+                        cena.HorizontalAlignment = 1;
+                        table.AddCell(naslov);
+                        table.AddCell(naziv);
+                        table.AddCell(kolicina);
+                        table.AddCell(cena);
 
                         if (sumaPapir1 > 0)
                         {
-                            racun += "\nPapir 1 - " + izabranPapir1.nazivPapira + "(Količina:" + kolicinaPapir1 + " * " + izabranPapir1.ukupnaVrednost.ToString("0.00") + " rsd.):  " + sumaPapir1.ToString("0.00") + " rsd.";
-                        }
-                        if (sumaPapir2 > 0)
-                        {
-                            racun += "\nPapir 2 - " + izabranPapir2.nazivPapira + "(Količina:" + kolicinaPapir2 + " * " + izabranPapir2.ukupnaVrednost.ToString("0.00") + " rsd.):  " + sumaPapir2.ToString("0.00") + " rsd.";
-                        }
-                        if (sumaPapir3 > 0)
-                        {
-                            racun += "\nPapir 3 - " + izabranPapir3.nazivPapira + "(Količina:" + kolicinaPapir3 + " * " + izabranPapir3.ukupnaVrednost.ToString("0.00") + " rsd.):  " + sumaPapir3.ToString("0.00") + " rsd.";
+                            naziv = new PdfPCell(new Phrase(izabranPapir1.nazivPapira, mainFont));
+                            naziv.HorizontalAlignment = 0;
+                            table.AddCell(naziv);
+
+                            kolicina = new PdfPCell(new Phrase(kolicinaPapir1.ToString(), mainFont));
+                            kolicina.HorizontalAlignment = 1;
+                            table.AddCell(kolicina);
+
+                            cena = new PdfPCell(new Phrase(sumaPapir1.ToString("0.00") + " rsd.", mainFont));
+                            cena.HorizontalAlignment = 2;
+                            table.AddCell(cena);
                         }
                         if (sumaPapir4 > 0)
                         {
-                            racun += "\nPapir 4 - " + izabranPapir4.nazivPapira + "(Količina:" + kolicinaPapir4+" * "+ izabranPapir4.ukupnaVrednost.ToString("0.00") + " rsd.):  " + sumaPapir4.ToString("0.00") + " rsd.";
+                            naziv = new PdfPCell(new Phrase(izabranPapir4.nazivPapira, mainFont));
+                            naziv.HorizontalAlignment = 0;
+                            table.AddCell(naziv);
+
+                            kolicina = new PdfPCell(new Phrase(kolicinaPapir4.ToString(), mainFont));
+                            kolicina.HorizontalAlignment = 1;
+                            table.AddCell(kolicina);
+
+                            cena = new PdfPCell(new Phrase(sumaPapir4.ToString("0.00") + " rsd.", mainFont));
+                            cena.HorizontalAlignment = 2;
+                            table.AddCell(cena);
                         }
+                        if (sumaPapir2 > 0)
+                        {
+                            naziv = new PdfPCell(new Phrase(izabranPapir2.nazivPapira, mainFont));
+                            naziv.HorizontalAlignment = 0;
+                            table.AddCell(naziv);
+
+                            kolicina = new PdfPCell(new Phrase(kolicinaPapir2.ToString(), mainFont));
+                            kolicina.HorizontalAlignment = 1;
+                            table.AddCell(kolicina);
+
+                            cena = new PdfPCell(new Phrase(sumaPapir2.ToString("0.00") + " rsd.", mainFont));
+                            cena.HorizontalAlignment = 2;
+                            table.AddCell(cena);
+                        }
+                        if (sumaPapir3 > 0)
+                        {
+                            naziv = new PdfPCell(new Phrase(izabranPapir3.nazivPapira, mainFont));
+                            naziv.HorizontalAlignment = 0;
+                            table.AddCell(naziv);
+
+                            kolicina = new PdfPCell(new Phrase(kolicinaPapir3.ToString(), mainFont));
+                            kolicina.HorizontalAlignment = 1;
+                            table.AddCell(kolicina);
+
+                            cena = new PdfPCell(new Phrase(sumaPapir3.ToString("0.00") + " rsd.", mainFont));
+                            cena.HorizontalAlignment = 2;
+                            table.AddCell(cena);
+                        }
+
                         if (vrednostPripreme > 0)
                         {
-                            racun += "\nPriprema:  " + vrednostPripreme.ToString("0.00")+ " rsd.";
+                            naziv = new PdfPCell(new Phrase("Priprema", mainFont));
+                            naziv.HorizontalAlignment = 0;
+                            table.AddCell(naziv);
+
+                            kolicina = new PdfPCell(new Phrase("\u2713", mainFont));
+                            kolicina.HorizontalAlignment = 1;
+                            table.AddCell(kolicina);
+
+                            cena = new PdfPCell(new Phrase(vrednostPripreme.ToString("0.00") + " rsd.", mainFont));
+                            cena.HorizontalAlignment = 2;
+                            table.AddCell(cena);
                         }
-                        if (sumaPloca > 0)
-                        {
-                            racun += "\nPloča - " + izabranaPloca.nazivPloce + "(Količina:" + kolicinaPloca + " * " + izabranaPloca.cena.ToString("0.00") + " rsd.):  " + sumaPloca.ToString("0.00") + " rsd.";
-                        }
-                        if (vrednostPripremePoPloci > 0)
-                        {
-                            racun += "\nPriprema po ploči:  " + vrednostPripremePoPloci.ToString("0.00") + " rsd.";
-                        }
-                        if (sumaOtisaka > 0)
-                        {
-                            racun += "\nOtisci:  " + sumaOtisaka.ToString("0.00") + " rsd.";
-                        }
-                        if (vrednostPranjaMasina > 0)
-                        {
-                            racun += "\nPranje mašina:  " + vrednostPranjaMasina.ToString("0.00") + " rsd.";
-                        }
-                        if (vrednostToniranja > 0)
-                        {
-                            racun += "\nToniranje:  " + vrednostToniranja.ToString("0.00") + " rsd.";
-                        }
-                        if (vrednostFederPoveza > 0)
-                        {
-                            racun += "\nFeder povez:  " + vrednostFederPoveza.ToString("0.00") + " rsd.";
-                        }
-                        if (sumaPlastike > 0)
-                        {
-                            racun += "\nPlastika - " + izabranaPlastika.nazivPlastike + ":  " + sumaPlastike.ToString("0.00") + " rsd.";
-                        }
-                        if (sumaSivenja > 0)
-                        {
-                            racun += "\nŠivenje:  " + sumaSivenja.ToString("0.00") + " rsd.";
-                        }
-                        if (vrednostStancovanja > 0)
-                        {
-                            racun += "\nŠtancovanje:  " + vrednostStancovanja.ToString("0.00") + " rsd.";
-                        }
-                        if (vrednostRicovanja > 0)
-                        {
-                            racun += "\nRicovanje:  " + vrednostRicovanja.ToString("0.00") + " rsd.";
-                        }
-                        if (vrednostNumeracije > 0)
-                        {
-                            racun += "\nNumeracija:  " + vrednostNumeracije.ToString("0.00") + " rsd.";
-                        }
-                        if (vrednostSecenjaPapira > 0)
-                        {
-                            racun += "\nSečenje papira:  " + vrednostSecenjaPapira.ToString("0.00") + " rsd.";
-                        }
-                        if (vrednostLepljenjaForzeca > 0)
-                        {
-                            racun += "\nLepljenje forzeca:  " + vrednostLepljenjaForzeca.ToString("0.00") + " rsd.";
-                        }
-                        if (vrednostCantragovanja > 0)
-                        {
-                            racun += "\nCantragovanje:  " + vrednostCantragovanja.ToString("0.00") + " rsd.";
-                        }
-                        if (vrednostLKPT > 0)
-                        {
-                            racun += "\nLepljenje,kapital i pokazne trake:  " + vrednostLKPT.ToString("0.00") + " rsd.";
-                        }
-                        if (vrednostKoricenja > 0)
-                        {
-                            racun += "\nKoričenje:  " + vrednostKoricenja.ToString("0.00") + " rsd.";
-                        }
-                        if (vrednostIzradeKorica > 0)
-                        {
-                            racun += "\nIzrada korica:  " + vrednostIzradeKorica.ToString("0.00") + " rsd.";
-                        }
-                        if (vrednostSecenjaZica > 0)
-                        {
-                            racun += "\nSečenje papira:  " + vrednostSecenjaZica.ToString("0.00") + " rsd.";
-                        }
-                        if (vrednostPakovanja > 0)
-                        {
-                            racun += "\nPakovanje:  " + vrednostPakovanja.ToString("0.00") + " rsd.";
-                        }
-                        if (vrednostBusenjaRupa > 0)
-                        {
-                            racun += "\nBušenje rupa(za kalendare i rek. blokove):  " + vrednostBusenjaRupa.ToString("0.00") + " rsd.";
-                        }
-                        if (vrednostJahaca > 0)
-                        {
-                            racun += "\nJahači:  " + vrednostJahaca.ToString("0.00") + " rsd.";
-                        }
-                        if (vrednostHeftanja > 0)
-                        {
-                            racun += "\nHeftanje:  " + vrednostHeftanja.ToString("0.00") + " rsd.";
-                        }
-                        if (vrednostSavijanjaPapira > 0)
-                        {
-                            racun += "\nSavijanje papira:  " + vrednostSavijanjaPapira.ToString("0.00") + " rsd.";
-                        }
-                        if (vrednostKasiranja > 0)
-                        {
-                            racun += "\nKasiranje:  " + vrednostKasiranja.ToString("0.00") + " rsd.";
-                        }
-                        if (vrednostDigitale > 0)
-                        {
-                            racun += "\nDigitala:  " + vrednostDigitale.ToString("0.00") + " rsd.";
-                        }
-                        if (vrednostPerforacije > 0)
-                        {
-                            racun += "\nPerforacija:  " + vrednostPerforacije.ToString("0.00") + " rsd.";
-                        }
-                        if (vrednostBigovanja > 0)
-                        {
-                            racun += "\nBigovanje:  " + vrednostBigovanja.ToString("0.00") + " rsd.";
-                        }
-                        if (vrednostZlatotiska > 0)
-                        {
-                            racun += "\nZlatotisak:  " + vrednostZlatotiska.ToString("0.00") + " rsd.";
-                        }
-                        if (vrednostKlisea > 0)
-                        {
-                            racun += "\nKliše:" + vrednostKlisea.ToString("0.00") + " rsd.";
-                        }
-                        if (vrednostIzradeKesa > 0)
-                        {
-                            racun += "\nIzrada kesa:" + vrednostIzradeKesa.ToString("0.00") + " rsd.";
-                        }
-                        if (vrednostIzradeKutija > 0)
-                        {
-                            racun += "\nIzrada kutija:" + vrednostIzradeKutija.ToString("0.00") + " rsd.";
-                        }
-                        if (vrednostLajmovanja > 0)
-                        {
-                            racun += "\nLajmovanje:" + vrednostLajmovanja.ToString("0.00") + " rsd.";
-                        }
-                        racun += "\n\nUkupno:  ............................................................................ " + suma.ToString("0.00") + " rsd.\n";
-                        racun += "_________________________________________________________________________________________\n";
-                        racun += "@RižaKalkulator\n";
-                        
-                        Paragraph p = new iTextSharp.text.Paragraph(racun);
-                        document.Add(p);
+
+                        document.Add(table);
+
+                        String footer1 = "";
+                        footer1 += "\n________________________________________________________________________________________";
+                        footer1 += "\n\n                                                                                                              Ukupna cena: " + suma.ToString("0.00") + " rsd.";
+                        footer1 += "\n________________________________________________________________________________________\n\n\n";
+                        footer1 += "\n  Izdavač ponude:______________________                                           Primio:______________________";
+                        var footer_para1 = new Paragraph(footer1, mainFont);
+                        document.Add(footer_para1);
+
                         MessageBox.Show("Uspešno čuvanje PDF-a.", "Riža kalkulator", MessageBoxButtons.OK);
                     }catch (Exception ex)
                     {
