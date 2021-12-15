@@ -9,7 +9,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
-
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using System.IO;
 
 namespace riza_kalkulator
 {
@@ -87,7 +89,14 @@ namespace riza_kalkulator
         public double vrednostSavijanjaPapira = 0;
         public double vrednostKasiranja = 0;
         public double vrednostDigitale = 0;
-        public double vrednostTonera = 0;
+        public double vrednostPerforacije = 0;
+        public double vrednostBusenjaRupa = 0;
+        public double vrednostBigovanja = 0;
+        public double vrednostZlatotiska = 0;
+        public double vrednostKlisea = 0;
+        public double vrednostIzradeKesa = 0;
+        public double vrednostIzradeKutija = 0;
+        public double vrednostLajmovanja = 0;
 
         //REGEX
         public string regexDouble = "^\\d*\\.?\\d+$";
@@ -360,12 +369,19 @@ namespace riza_kalkulator
                  + vrednostSavijanjaPapira
                  + vrednostKasiranja
                  + vrednostDigitale
-                 + vrednostTonera;
+                 + vrednostPerforacije
+                 + vrednostBigovanja
+                 + vrednostZlatotiska
+                 + vrednostKlisea
+                 + vrednostIzradeKesa
+                 + vrednostIzradeKutija
+                 + vrednostLajmovanja
+                 + vrednostBusenjaRupa;
 
             textBox5.Text = suma.ToString("0.00") + " rsd.";
-            button1.Enabled = true;
+            //button1.Enabled = true;
             button4.Enabled = true;
-            textBox32.Enabled = true;
+            //textBox32.Enabled = true;
         }
 
         //SUMA
@@ -1238,7 +1254,7 @@ namespace riza_kalkulator
         {
             vrednostDigitale = unosVrednosti(textBox29, label88);
         }
-        //TONERI
+        //PERFORACIJA
         private void checkBox28_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox28.Checked)
@@ -1255,7 +1271,324 @@ namespace riza_kalkulator
 
         private void textBox30_TextChanged(object sender, EventArgs e)
         {
-            vrednostTonera = unosVrednosti(textBox30, label91);
+            vrednostPerforacije = unosVrednosti(textBox30, label91);
+        }
+
+        //BUSENJE RUPA
+        private void checkBox36_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox36.Checked)
+            {
+                textBox39.Enabled = true;
+            }
+            else
+            {
+                textBox39.Enabled = false;
+                textBox39.Text = "";
+                label116.Text = "0.00 rsd.";
+            }
+        }
+
+        private void textBox39_TextChanged(object sender, EventArgs e)
+        {
+            vrednostBusenjaRupa = unosVrednosti(textBox39, label116);
+        }
+        //BIGOVANJE
+        private void checkBox30_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox30.Checked)
+            {
+                textBox33.Enabled = true;
+            }
+            else
+            {
+                textBox33.Enabled = false;
+                textBox33.Text = "";
+                label98.Text = "0.00 rsd.";
+            }
+        }
+
+        private void textBox33_TextChanged(object sender, EventArgs e)
+        {
+            vrednostBigovanja = unosVrednosti(textBox33, label98);
+        }
+        //ZLATOTISAK
+        private void checkBox35_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox35.Checked)
+            {
+                textBox38.Enabled = true;
+            }
+            else
+            {
+                textBox38.Enabled = false;
+                textBox38.Text = "";
+                label113.Text = "0.00 rsd.";
+            }
+        }
+
+        private void textBox38_TextChanged(object sender, EventArgs e)
+        {
+            vrednostZlatotiska = unosVrednosti(textBox38, label113);
+        }
+        //KLISE
+        private void checkBox34_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox34.Checked)
+            {
+                textBox37.Enabled = true;
+            }
+            else
+            {
+                textBox37.Enabled = false;
+                textBox37.Text = "";
+                label110.Text = "0.00 rsd.";
+            }
+        }
+
+        private void textBox37_TextChanged(object sender, EventArgs e)
+        {
+            vrednostKlisea = unosVrednosti(textBox37, label110);
+        }
+        //IZRADA KESA
+        private void checkBox33_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox33.Checked)
+            {
+                textBox36.Enabled = true;
+            }
+            else
+            {
+                textBox36.Enabled = false;
+                textBox36.Text = "";
+                label107.Text = "0.00 rsd.";
+            }
+        }
+
+        private void textBox36_TextChanged(object sender, EventArgs e)
+        {
+            vrednostIzradeKesa = unosVrednosti(textBox36, label107);
+        }
+        //IZRADA KUTIJA
+        private void checkBox31_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox31.Checked)
+            {
+                textBox35.Enabled = true;
+            }
+            else
+            {
+                textBox35.Enabled = false;
+                textBox35.Text = "";
+                label104.Text = "0.00 rsd.";
+            }
+        }
+
+        private void textBox35_TextChanged(object sender, EventArgs e)
+        {
+            vrednostIzradeKutija = unosVrednosti(textBox35, label104);
+        }
+        //LAJMOVANJE
+        private void checkBox32_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox32.Checked)
+            {
+                textBox34.Enabled = true;
+            }
+            else
+            {
+                textBox34.Enabled = false;
+                textBox34.Text = "";
+                label101.Text = "0.00 rsd.";
+            }
+        }
+
+        private void textBox34_TextChanged(object sender, EventArgs e)
+        {
+            vrednostLajmovanja = unosVrednosti(textBox34, label101);
+        }
+        //PDF
+        private void button4_Click(object sender, EventArgs e)
+        {
+            using(SaveFileDialog save = new SaveFileDialog() { Filter="PDF file|*.pdf", ValidateNames = true })
+            {
+                if(save.ShowDialog() == DialogResult.OK)
+                {
+                    iTextSharp.text.Document document = new iTextSharp.text.Document(PageSize.A4.Rotate());
+                    try
+                    {
+                        PdfWriter.GetInstance(document, new FileStream(save.FileName, FileMode.Create));
+                        document.Open();
+                        document.AddTitle("Stamparija riza!");
+                        String racun="";
+                        racun += "Štamparija Riža:\n";
+                        racun += "_________________________________________________________________________________________\n";
+
+                        if (sumaPapir1 > 0)
+                        {
+                            racun += "\nPapir 1 - " + izabranPapir1.nazivPapira + "(Količina:" + kolicinaPapir1 + " * " + izabranPapir1.ukupnaVrednost.ToString("0.00") + " rsd.):  " + sumaPapir1.ToString("0.00") + " rsd.";
+                        }
+                        if (sumaPapir2 > 0)
+                        {
+                            racun += "\nPapir 2 - " + izabranPapir2.nazivPapira + "(Količina:" + kolicinaPapir2 + " * " + izabranPapir2.ukupnaVrednost.ToString("0.00") + " rsd.):  " + sumaPapir2.ToString("0.00") + " rsd.";
+                        }
+                        if (sumaPapir3 > 0)
+                        {
+                            racun += "\nPapir 3 - " + izabranPapir3.nazivPapira + "(Količina:" + kolicinaPapir3 + " * " + izabranPapir3.ukupnaVrednost.ToString("0.00") + " rsd.):  " + sumaPapir3.ToString("0.00") + " rsd.";
+                        }
+                        if (sumaPapir4 > 0)
+                        {
+                            racun += "\nPapir 4 - " + izabranPapir4.nazivPapira + "(Količina:" + kolicinaPapir4+" * "+ izabranPapir4.ukupnaVrednost.ToString("0.00") + " rsd.):  " + sumaPapir4.ToString("0.00") + " rsd.";
+                        }
+                        if (vrednostPripreme > 0)
+                        {
+                            racun += "\nPriprema:  " + vrednostPripreme.ToString("0.00")+ " rsd.";
+                        }
+                        if (sumaPloca > 0)
+                        {
+                            racun += "\nPloča - " + izabranaPloca.nazivPloce + "(Količina:" + kolicinaPloca + " * " + izabranaPloca.cena.ToString("0.00") + " rsd.):  " + sumaPloca.ToString("0.00") + " rsd.";
+                        }
+                        if (vrednostPripremePoPloci > 0)
+                        {
+                            racun += "\nPriprema po ploči:  " + vrednostPripremePoPloci.ToString("0.00") + " rsd.";
+                        }
+                        if (sumaOtisaka > 0)
+                        {
+                            racun += "\nOtisci:  " + sumaOtisaka.ToString("0.00") + " rsd.";
+                        }
+                        if (vrednostPranjaMasina > 0)
+                        {
+                            racun += "\nPranje mašina:  " + vrednostPranjaMasina.ToString("0.00") + " rsd.";
+                        }
+                        if (vrednostToniranja > 0)
+                        {
+                            racun += "\nToniranje:  " + vrednostToniranja.ToString("0.00") + " rsd.";
+                        }
+                        if (vrednostFederPoveza > 0)
+                        {
+                            racun += "\nFeder povez:  " + vrednostFederPoveza.ToString("0.00") + " rsd.";
+                        }
+                        if (sumaPlastike > 0)
+                        {
+                            racun += "\nPlastika - " + izabranaPlastika.nazivPlastike + ":  " + sumaPlastike.ToString("0.00") + " rsd.";
+                        }
+                        if (sumaSivenja > 0)
+                        {
+                            racun += "\nŠivenje:  " + sumaSivenja.ToString("0.00") + " rsd.";
+                        }
+                        if (vrednostStancovanja > 0)
+                        {
+                            racun += "\nŠtancovanje:  " + vrednostStancovanja.ToString("0.00") + " rsd.";
+                        }
+                        if (vrednostRicovanja > 0)
+                        {
+                            racun += "\nRicovanje:  " + vrednostRicovanja.ToString("0.00") + " rsd.";
+                        }
+                        if (vrednostNumeracije > 0)
+                        {
+                            racun += "\nNumeracija:  " + vrednostNumeracije.ToString("0.00") + " rsd.";
+                        }
+                        if (vrednostSecenjaPapira > 0)
+                        {
+                            racun += "\nSečenje papira:  " + vrednostSecenjaPapira.ToString("0.00") + " rsd.";
+                        }
+                        if (vrednostLepljenjaForzeca > 0)
+                        {
+                            racun += "\nLepljenje forzeca:  " + vrednostLepljenjaForzeca.ToString("0.00") + " rsd.";
+                        }
+                        if (vrednostCantragovanja > 0)
+                        {
+                            racun += "\nCantragovanje:  " + vrednostCantragovanja.ToString("0.00") + " rsd.";
+                        }
+                        if (vrednostLKPT > 0)
+                        {
+                            racun += "\nLepljenje,kapital i pokazne trake:  " + vrednostLKPT.ToString("0.00") + " rsd.";
+                        }
+                        if (vrednostKoricenja > 0)
+                        {
+                            racun += "\nKoričenje:  " + vrednostKoricenja.ToString("0.00") + " rsd.";
+                        }
+                        if (vrednostIzradeKorica > 0)
+                        {
+                            racun += "\nIzrada korica:  " + vrednostIzradeKorica.ToString("0.00") + " rsd.";
+                        }
+                        if (vrednostSecenjaZica > 0)
+                        {
+                            racun += "\nSečenje papira:  " + vrednostSecenjaZica.ToString("0.00") + " rsd.";
+                        }
+                        if (vrednostPakovanja > 0)
+                        {
+                            racun += "\nPakovanje:  " + vrednostPakovanja.ToString("0.00") + " rsd.";
+                        }
+                        if (vrednostBusenjaRupa > 0)
+                        {
+                            racun += "\nBušenje rupa(za kalendare i rek. blokove):  " + vrednostBusenjaRupa.ToString("0.00") + " rsd.";
+                        }
+                        if (vrednostJahaca > 0)
+                        {
+                            racun += "\nJahači:  " + vrednostJahaca.ToString("0.00") + " rsd.";
+                        }
+                        if (vrednostHeftanja > 0)
+                        {
+                            racun += "\nHeftanje:  " + vrednostHeftanja.ToString("0.00") + " rsd.";
+                        }
+                        if (vrednostSavijanjaPapira > 0)
+                        {
+                            racun += "\nSavijanje papira:  " + vrednostSavijanjaPapira.ToString("0.00") + " rsd.";
+                        }
+                        if (vrednostKasiranja > 0)
+                        {
+                            racun += "\nKasiranje:  " + vrednostKasiranja.ToString("0.00") + " rsd.";
+                        }
+                        if (vrednostDigitale > 0)
+                        {
+                            racun += "\nDigitala:  " + vrednostDigitale.ToString("0.00") + " rsd.";
+                        }
+                        if (vrednostPerforacije > 0)
+                        {
+                            racun += "\nPerforacija:  " + vrednostPerforacije.ToString("0.00") + " rsd.";
+                        }
+                        if (vrednostBigovanja > 0)
+                        {
+                            racun += "\nBigovanje:  " + vrednostBigovanja.ToString("0.00") + " rsd.";
+                        }
+                        if (vrednostZlatotiska > 0)
+                        {
+                            racun += "\nZlatotisak:  " + vrednostZlatotiska.ToString("0.00") + " rsd.";
+                        }
+                        if (vrednostKlisea > 0)
+                        {
+                            racun += "\nKliše:" + vrednostKlisea.ToString("0.00") + " rsd.";
+                        }
+                        if (vrednostIzradeKesa > 0)
+                        {
+                            racun += "\nIzrada kesa:" + vrednostIzradeKesa.ToString("0.00") + " rsd.";
+                        }
+                        if (vrednostIzradeKutija > 0)
+                        {
+                            racun += "\nIzrada kutija:" + vrednostIzradeKutija.ToString("0.00") + " rsd.";
+                        }
+                        if (vrednostLajmovanja > 0)
+                        {
+                            racun += "\nLajmovanje:" + vrednostLajmovanja.ToString("0.00") + " rsd.";
+                        }
+                        racun += "\n\nUkupno:  ............................................................................ " + suma.ToString("0.00") + " rsd.\n";
+                        racun += "_________________________________________________________________________________________\n";
+                        racun += "@RižaKalkulator\n";
+                        
+                        Paragraph p = new iTextSharp.text.Paragraph(racun);
+                        document.Add(p);
+                        MessageBox.Show("Uspešno čuvanje PDF-a.", "Riža kalkulator", MessageBoxButtons.OK);
+                    }catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message,"Greška prilikom čuvanja PDF-a!",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    }
+                    finally
+                    {
+                        document.Close();
+                    }
+                }
+            }
         }
     }
 }

@@ -1,0 +1,8 @@
+1.Napraviti unutar C: direktorijuma folder pod imenom Baza;
+2.Unutar foldera Baza prekopirati fajl Riza.accb;
+3.Instalirati AccessDatabaseEngine_X64.exe;
+4.Pokrenuti setup.exe kako biste instalirali aplikaciju;
+5.Pokrenuti aplikaciju iz start menija kucanjem RizaKalkulator;
+
+-Sifra za bazu je riza123,username je Admin;
+-Kako biste izbrisali aplikaciju koristite Add or Remove programs unutar samog Windows-a;
