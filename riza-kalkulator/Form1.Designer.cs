@@ -96,6 +96,107 @@
             this.textBox12 = new System.Windows.Forms.TextBox();
             this.label38 = new System.Windows.Forms.Label();
             this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.label42 = new System.Windows.Forms.Label();
+            this.label43 = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
+            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.checkBox12 = new System.Windows.Forms.CheckBox();
+            this.label45 = new System.Windows.Forms.Label();
+            this.label46 = new System.Windows.Forms.Label();
+            this.label47 = new System.Windows.Forms.Label();
+            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.checkBox13 = new System.Windows.Forms.CheckBox();
+            this.label48 = new System.Windows.Forms.Label();
+            this.label49 = new System.Windows.Forms.Label();
+            this.label50 = new System.Windows.Forms.Label();
+            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.checkBox14 = new System.Windows.Forms.CheckBox();
+            this.label51 = new System.Windows.Forms.Label();
+            this.label52 = new System.Windows.Forms.Label();
+            this.label53 = new System.Windows.Forms.Label();
+            this.textBox17 = new System.Windows.Forms.TextBox();
+            this.checkBox15 = new System.Windows.Forms.CheckBox();
+            this.label54 = new System.Windows.Forms.Label();
+            this.label55 = new System.Windows.Forms.Label();
+            this.label56 = new System.Windows.Forms.Label();
+            this.textBox18 = new System.Windows.Forms.TextBox();
+            this.checkBox16 = new System.Windows.Forms.CheckBox();
+            this.label57 = new System.Windows.Forms.Label();
+            this.label58 = new System.Windows.Forms.Label();
+            this.label59 = new System.Windows.Forms.Label();
+            this.textBox19 = new System.Windows.Forms.TextBox();
+            this.checkBox17 = new System.Windows.Forms.CheckBox();
+            this.label63 = new System.Windows.Forms.Label();
+            this.label64 = new System.Windows.Forms.Label();
+            this.label65 = new System.Windows.Forms.Label();
+            this.textBox21 = new System.Windows.Forms.TextBox();
+            this.checkBox19 = new System.Windows.Forms.CheckBox();
+            this.label66 = new System.Windows.Forms.Label();
+            this.label67 = new System.Windows.Forms.Label();
+            this.label68 = new System.Windows.Forms.Label();
+            this.textBox22 = new System.Windows.Forms.TextBox();
+            this.checkBox20 = new System.Windows.Forms.CheckBox();
+            this.label69 = new System.Windows.Forms.Label();
+            this.label70 = new System.Windows.Forms.Label();
+            this.label71 = new System.Windows.Forms.Label();
+            this.textBox23 = new System.Windows.Forms.TextBox();
+            this.checkBox21 = new System.Windows.Forms.CheckBox();
+            this.label72 = new System.Windows.Forms.Label();
+            this.label73 = new System.Windows.Forms.Label();
+            this.label74 = new System.Windows.Forms.Label();
+            this.textBox24 = new System.Windows.Forms.TextBox();
+            this.checkBox22 = new System.Windows.Forms.CheckBox();
+            this.label75 = new System.Windows.Forms.Label();
+            this.label76 = new System.Windows.Forms.Label();
+            this.label77 = new System.Windows.Forms.Label();
+            this.textBox25 = new System.Windows.Forms.TextBox();
+            this.checkBox23 = new System.Windows.Forms.CheckBox();
+            this.label81 = new System.Windows.Forms.Label();
+            this.label82 = new System.Windows.Forms.Label();
+            this.label83 = new System.Windows.Forms.Label();
+            this.textBox27 = new System.Windows.Forms.TextBox();
+            this.checkBox25 = new System.Windows.Forms.CheckBox();
+            this.label60 = new System.Windows.Forms.Label();
+            this.label61 = new System.Windows.Forms.Label();
+            this.label62 = new System.Windows.Forms.Label();
+            this.textBox20 = new System.Windows.Forms.TextBox();
+            this.checkBox18 = new System.Windows.Forms.CheckBox();
+            this.label39 = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
+            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.checkBox11 = new System.Windows.Forms.CheckBox();
+            this.label84 = new System.Windows.Forms.Label();
+            this.label85 = new System.Windows.Forms.Label();
+            this.label86 = new System.Windows.Forms.Label();
+            this.textBox28 = new System.Windows.Forms.TextBox();
+            this.checkBox26 = new System.Windows.Forms.CheckBox();
+            this.label87 = new System.Windows.Forms.Label();
+            this.label88 = new System.Windows.Forms.Label();
+            this.label89 = new System.Windows.Forms.Label();
+            this.textBox29 = new System.Windows.Forms.TextBox();
+            this.checkBox27 = new System.Windows.Forms.CheckBox();
+            this.label90 = new System.Windows.Forms.Label();
+            this.label91 = new System.Windows.Forms.Label();
+            this.label92 = new System.Windows.Forms.Label();
+            this.textBox30 = new System.Windows.Forms.TextBox();
+            this.checkBox28 = new System.Windows.Forms.CheckBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.label93 = new System.Windows.Forms.Label();
+            this.label94 = new System.Windows.Forms.Label();
+            this.label95 = new System.Windows.Forms.Label();
+            this.textBox31 = new System.Windows.Forms.TextBox();
+            this.checkBox29 = new System.Windows.Forms.CheckBox();
+            this.label78 = new System.Windows.Forms.Label();
+            this.label79 = new System.Windows.Forms.Label();
+            this.label80 = new System.Windows.Forms.Label();
+            this.textBox26 = new System.Windows.Forms.TextBox();
+            this.checkBox24 = new System.Windows.Forms.CheckBox();
+            this.comboBox7 = new System.Windows.Forms.ComboBox();
+            this.textBox32 = new System.Windows.Forms.TextBox();
+            this.label96 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // comboBox1
@@ -319,7 +420,7 @@
             this.checkBox1.AutoSize = true;
             this.checkBox1.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.checkBox1.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.checkBox1.Location = new System.Drawing.Point(8, 91);
+            this.checkBox1.Location = new System.Drawing.Point(21, 94);
             this.checkBox1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(113, 20);
@@ -333,7 +434,7 @@
             this.checkBox2.AutoSize = true;
             this.checkBox2.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.checkBox2.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.checkBox2.Location = new System.Drawing.Point(8, 145);
+            this.checkBox2.Location = new System.Drawing.Point(21, 145);
             this.checkBox2.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(113, 20);
@@ -347,7 +448,7 @@
             this.checkBox3.AutoSize = true;
             this.checkBox3.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.checkBox3.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.checkBox3.Location = new System.Drawing.Point(8, 199);
+            this.checkBox3.Location = new System.Drawing.Point(21, 198);
             this.checkBox3.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.checkBox3.Name = "checkBox3";
             this.checkBox3.Size = new System.Drawing.Size(113, 20);
@@ -388,8 +489,8 @@
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button2.Location = new System.Drawing.Point(1045, 620);
+            this.button2.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.button2.Location = new System.Drawing.Point(940, 544);
             this.button2.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(106, 37);
@@ -401,27 +502,27 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(962, 669);
+            this.label17.Location = new System.Drawing.Point(1053, 532);
             this.label17.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(57, 16);
+            this.label17.Size = new System.Drawing.Size(90, 16);
             this.label17.TabIndex = 30;
-            this.label17.Text = "Ukupno:";
+            this.label17.Text = "Ukupna cena:";
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(1034, 665);
+            this.textBox5.Location = new System.Drawing.Point(1056, 552);
             this.textBox5.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.textBox5.Name = "textBox5";
             this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(132, 22);
+            this.textBox5.Size = new System.Drawing.Size(157, 22);
             this.textBox5.TabIndex = 29;
             // 
             // checkBox4
             // 
             this.checkBox4.AutoSize = true;
             this.checkBox4.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.checkBox4.Location = new System.Drawing.Point(213, 249);
+            this.checkBox4.Location = new System.Drawing.Point(221, 250);
             this.checkBox4.Name = "checkBox4";
             this.checkBox4.Size = new System.Drawing.Size(84, 20);
             this.checkBox4.TabIndex = 31;
@@ -474,7 +575,7 @@
             this.checkBox5.AutoSize = true;
             this.checkBox5.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.checkBox5.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.checkBox5.Location = new System.Drawing.Point(26, 302);
+            this.checkBox5.Location = new System.Drawing.Point(39, 303);
             this.checkBox5.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.checkBox5.Name = "checkBox5";
             this.checkBox5.Size = new System.Drawing.Size(95, 20);
@@ -578,7 +679,8 @@
             // 
             this.checkBox6.AutoSize = true;
             this.checkBox6.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.checkBox6.Location = new System.Drawing.Point(163, 357);
+            this.checkBox6.Enabled = false;
+            this.checkBox6.Location = new System.Drawing.Point(168, 360);
             this.checkBox6.Name = "checkBox6";
             this.checkBox6.Size = new System.Drawing.Size(135, 20);
             this.checkBox6.TabIndex = 43;
@@ -589,7 +691,7 @@
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(455, 384);
+            this.label27.Location = new System.Drawing.Point(455, 433);
             this.label27.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(42, 16);
@@ -599,7 +701,7 @@
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(455, 407);
+            this.label28.Location = new System.Drawing.Point(455, 456);
             this.label28.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(56, 16);
@@ -609,7 +711,7 @@
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(311, 383);
+            this.label29.Location = new System.Drawing.Point(311, 432);
             this.label29.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(64, 16);
@@ -619,7 +721,7 @@
             // textBox9
             // 
             this.textBox9.Enabled = false;
-            this.textBox9.Location = new System.Drawing.Point(313, 403);
+            this.textBox9.Location = new System.Drawing.Point(313, 452);
             this.textBox9.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(132, 22);
@@ -630,7 +732,7 @@
             // 
             this.checkBox7.AutoSize = true;
             this.checkBox7.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.checkBox7.Location = new System.Drawing.Point(182, 405);
+            this.checkBox7.Location = new System.Drawing.Point(188, 455);
             this.checkBox7.Name = "checkBox7";
             this.checkBox7.Size = new System.Drawing.Size(115, 20);
             this.checkBox7.TabIndex = 48;
@@ -641,7 +743,7 @@
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(455, 430);
+            this.label30.Location = new System.Drawing.Point(455, 385);
             this.label30.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(42, 16);
@@ -651,7 +753,7 @@
             // label31
             // 
             this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(455, 453);
+            this.label31.Location = new System.Drawing.Point(455, 408);
             this.label31.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(56, 16);
@@ -661,7 +763,7 @@
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(311, 429);
+            this.label32.Location = new System.Drawing.Point(311, 384);
             this.label32.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(57, 16);
@@ -671,7 +773,7 @@
             // textBox10
             // 
             this.textBox10.Enabled = false;
-            this.textBox10.Location = new System.Drawing.Point(313, 449);
+            this.textBox10.Location = new System.Drawing.Point(313, 404);
             this.textBox10.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(132, 22);
@@ -682,7 +784,8 @@
             // 
             this.checkBox8.AutoSize = true;
             this.checkBox8.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.checkBox8.Location = new System.Drawing.Point(235, 451);
+            this.checkBox8.Enabled = false;
+            this.checkBox8.Location = new System.Drawing.Point(241, 406);
             this.checkBox8.Name = "checkBox8";
             this.checkBox8.Size = new System.Drawing.Size(62, 20);
             this.checkBox8.TabIndex = 53;
@@ -693,7 +796,7 @@
             // label33
             // 
             this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(455, 481);
+            this.label33.Location = new System.Drawing.Point(455, 531);
             this.label33.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(42, 16);
@@ -703,7 +806,7 @@
             // label34
             // 
             this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(455, 504);
+            this.label34.Location = new System.Drawing.Point(455, 554);
             this.label34.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(56, 16);
@@ -713,7 +816,7 @@
             // label35
             // 
             this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(311, 480);
+            this.label35.Location = new System.Drawing.Point(311, 530);
             this.label35.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(64, 16);
@@ -723,7 +826,7 @@
             // textBox11
             // 
             this.textBox11.Enabled = false;
-            this.textBox11.Location = new System.Drawing.Point(313, 500);
+            this.textBox11.Location = new System.Drawing.Point(313, 550);
             this.textBox11.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.textBox11.Name = "textBox11";
             this.textBox11.Size = new System.Drawing.Size(132, 22);
@@ -734,7 +837,7 @@
             // 
             this.checkBox9.AutoSize = true;
             this.checkBox9.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.checkBox9.Location = new System.Drawing.Point(192, 500);
+            this.checkBox9.Location = new System.Drawing.Point(198, 552);
             this.checkBox9.Name = "checkBox9";
             this.checkBox9.Size = new System.Drawing.Size(105, 20);
             this.checkBox9.TabIndex = 58;
@@ -747,7 +850,7 @@
             this.checkBox10.AutoSize = true;
             this.checkBox10.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.checkBox10.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.checkBox10.Location = new System.Drawing.Point(26, 554);
+            this.checkBox10.Location = new System.Drawing.Point(26, 605);
             this.checkBox10.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.checkBox10.Name = "checkBox10";
             this.checkBox10.Size = new System.Drawing.Size(108, 20);
@@ -759,7 +862,7 @@
             // label36
             // 
             this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(455, 532);
+            this.label36.Location = new System.Drawing.Point(455, 582);
             this.label36.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(42, 16);
@@ -769,7 +872,7 @@
             // label37
             // 
             this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(455, 555);
+            this.label37.Location = new System.Drawing.Point(455, 605);
             this.label37.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(56, 16);
@@ -779,7 +882,7 @@
             // textBox12
             // 
             this.textBox12.Enabled = false;
-            this.textBox12.Location = new System.Drawing.Point(313, 553);
+            this.textBox12.Location = new System.Drawing.Point(313, 603);
             this.textBox12.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.textBox12.Name = "textBox12";
             this.textBox12.Size = new System.Drawing.Size(132, 22);
@@ -789,7 +892,7 @@
             // label38
             // 
             this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(309, 532);
+            this.label38.Location = new System.Drawing.Point(309, 582);
             this.label38.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(57, 16);
@@ -801,18 +904,1169 @@
             this.comboBox6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox6.Enabled = false;
             this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(144, 552);
+            this.comboBox6.Location = new System.Drawing.Point(144, 602);
             this.comboBox6.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.comboBox6.Name = "comboBox6";
             this.comboBox6.Size = new System.Drawing.Size(159, 24);
             this.comboBox6.TabIndex = 63;
             this.comboBox6.SelectedIndexChanged += new System.EventHandler(this.comboBox6_SelectedIndexChanged);
             // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(830, 119);
+            this.label42.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(42, 16);
+            this.label42.TabIndex = 78;
+            this.label42.Text = "Cena:";
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(830, 142);
+            this.label43.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(56, 16);
+            this.label43.TabIndex = 77;
+            this.label43.Text = "0.00 rsd.";
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(686, 118);
+            this.label44.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(64, 16);
+            this.label44.TabIndex = 76;
+            this.label44.Text = "Vrednost:";
+            // 
+            // textBox14
+            // 
+            this.textBox14.Enabled = false;
+            this.textBox14.Location = new System.Drawing.Point(688, 138);
+            this.textBox14.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.textBox14.Name = "textBox14";
+            this.textBox14.Size = new System.Drawing.Size(132, 22);
+            this.textBox14.TabIndex = 75;
+            this.textBox14.TextChanged += new System.EventHandler(this.textBox14_TextChanged);
+            // 
+            // checkBox12
+            // 
+            this.checkBox12.AutoSize = true;
+            this.checkBox12.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.checkBox12.Location = new System.Drawing.Point(590, 141);
+            this.checkBox12.Name = "checkBox12";
+            this.checkBox12.Size = new System.Drawing.Size(90, 20);
+            this.checkBox12.TabIndex = 74;
+            this.checkBox12.Text = "Ricovanje:";
+            this.checkBox12.UseVisualStyleBackColor = true;
+            this.checkBox12.CheckedChanged += new System.EventHandler(this.checkBox12_CheckedChanged);
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Location = new System.Drawing.Point(830, 63);
+            this.label45.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(42, 16);
+            this.label45.TabIndex = 83;
+            this.label45.Text = "Cena:";
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Location = new System.Drawing.Point(830, 86);
+            this.label46.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(56, 16);
+            this.label46.TabIndex = 82;
+            this.label46.Text = "0.00 rsd.";
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Location = new System.Drawing.Point(686, 62);
+            this.label47.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(64, 16);
+            this.label47.TabIndex = 81;
+            this.label47.Text = "Vrednost:";
+            // 
+            // textBox15
+            // 
+            this.textBox15.Enabled = false;
+            this.textBox15.Location = new System.Drawing.Point(688, 82);
+            this.textBox15.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.textBox15.Name = "textBox15";
+            this.textBox15.Size = new System.Drawing.Size(132, 22);
+            this.textBox15.TabIndex = 80;
+            this.textBox15.TextChanged += new System.EventHandler(this.textBox15_TextChanged);
+            // 
+            // checkBox13
+            // 
+            this.checkBox13.AutoSize = true;
+            this.checkBox13.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.checkBox13.Location = new System.Drawing.Point(576, 84);
+            this.checkBox13.Name = "checkBox13";
+            this.checkBox13.Size = new System.Drawing.Size(104, 20);
+            this.checkBox13.TabIndex = 79;
+            this.checkBox13.Text = "Štancovanje:";
+            this.checkBox13.UseVisualStyleBackColor = true;
+            this.checkBox13.CheckedChanged += new System.EventHandler(this.checkBox13_CheckedChanged);
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Location = new System.Drawing.Point(830, 171);
+            this.label48.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(42, 16);
+            this.label48.TabIndex = 88;
+            this.label48.Text = "Cena:";
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.Location = new System.Drawing.Point(830, 194);
+            this.label49.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(56, 16);
+            this.label49.TabIndex = 87;
+            this.label49.Text = "0.00 rsd.";
+            // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.Location = new System.Drawing.Point(686, 170);
+            this.label50.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(64, 16);
+            this.label50.TabIndex = 86;
+            this.label50.Text = "Vrednost:";
+            // 
+            // textBox16
+            // 
+            this.textBox16.Enabled = false;
+            this.textBox16.Location = new System.Drawing.Point(688, 190);
+            this.textBox16.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.textBox16.Name = "textBox16";
+            this.textBox16.Size = new System.Drawing.Size(132, 22);
+            this.textBox16.TabIndex = 85;
+            this.textBox16.TextChanged += new System.EventHandler(this.textBox16_TextChanged);
+            // 
+            // checkBox14
+            // 
+            this.checkBox14.AutoSize = true;
+            this.checkBox14.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.checkBox14.Location = new System.Drawing.Point(582, 193);
+            this.checkBox14.Name = "checkBox14";
+            this.checkBox14.Size = new System.Drawing.Size(98, 20);
+            this.checkBox14.TabIndex = 84;
+            this.checkBox14.Text = "Numeracija:";
+            this.checkBox14.UseVisualStyleBackColor = true;
+            this.checkBox14.CheckedChanged += new System.EventHandler(this.checkBox14_CheckedChanged);
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.Location = new System.Drawing.Point(830, 226);
+            this.label51.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(42, 16);
+            this.label51.TabIndex = 93;
+            this.label51.Text = "Cena:";
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.Location = new System.Drawing.Point(830, 249);
+            this.label52.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(56, 16);
+            this.label52.TabIndex = 92;
+            this.label52.Text = "0.00 rsd.";
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Location = new System.Drawing.Point(686, 225);
+            this.label53.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(64, 16);
+            this.label53.TabIndex = 91;
+            this.label53.Text = "Vrednost:";
+            // 
+            // textBox17
+            // 
+            this.textBox17.Enabled = false;
+            this.textBox17.Location = new System.Drawing.Point(688, 245);
+            this.textBox17.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.textBox17.Name = "textBox17";
+            this.textBox17.Size = new System.Drawing.Size(132, 22);
+            this.textBox17.TabIndex = 90;
+            this.textBox17.TextChanged += new System.EventHandler(this.textBox17_TextChanged);
+            // 
+            // checkBox15
+            // 
+            this.checkBox15.AutoSize = true;
+            this.checkBox15.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.checkBox15.Location = new System.Drawing.Point(559, 248);
+            this.checkBox15.Name = "checkBox15";
+            this.checkBox15.Size = new System.Drawing.Size(121, 20);
+            this.checkBox15.TabIndex = 89;
+            this.checkBox15.Text = "Sečenje papira:";
+            this.checkBox15.UseVisualStyleBackColor = true;
+            this.checkBox15.CheckedChanged += new System.EventHandler(this.checkBox15_CheckedChanged);
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.Location = new System.Drawing.Point(830, 277);
+            this.label54.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(42, 16);
+            this.label54.TabIndex = 98;
+            this.label54.Text = "Cena:";
+            // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.Location = new System.Drawing.Point(830, 300);
+            this.label55.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(56, 16);
+            this.label55.TabIndex = 97;
+            this.label55.Text = "0.00 rsd.";
+            // 
+            // label56
+            // 
+            this.label56.AutoSize = true;
+            this.label56.Location = new System.Drawing.Point(686, 276);
+            this.label56.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(64, 16);
+            this.label56.TabIndex = 96;
+            this.label56.Text = "Vrednost:";
+            // 
+            // textBox18
+            // 
+            this.textBox18.Enabled = false;
+            this.textBox18.Location = new System.Drawing.Point(688, 296);
+            this.textBox18.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.textBox18.Name = "textBox18";
+            this.textBox18.Size = new System.Drawing.Size(132, 22);
+            this.textBox18.TabIndex = 95;
+            this.textBox18.TextChanged += new System.EventHandler(this.textBox18_TextChanged);
+            // 
+            // checkBox16
+            // 
+            this.checkBox16.AutoSize = true;
+            this.checkBox16.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.checkBox16.Location = new System.Drawing.Point(549, 299);
+            this.checkBox16.Name = "checkBox16";
+            this.checkBox16.Size = new System.Drawing.Size(131, 20);
+            this.checkBox16.TabIndex = 94;
+            this.checkBox16.Text = "Lepljenje forzeca:";
+            this.checkBox16.UseVisualStyleBackColor = true;
+            this.checkBox16.CheckedChanged += new System.EventHandler(this.checkBox16_CheckedChanged);
+            // 
+            // label57
+            // 
+            this.label57.AutoSize = true;
+            this.label57.Location = new System.Drawing.Point(830, 325);
+            this.label57.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(42, 16);
+            this.label57.TabIndex = 103;
+            this.label57.Text = "Cena:";
+            // 
+            // label58
+            // 
+            this.label58.AutoSize = true;
+            this.label58.Location = new System.Drawing.Point(830, 348);
+            this.label58.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(56, 16);
+            this.label58.TabIndex = 102;
+            this.label58.Text = "0.00 rsd.";
+            // 
+            // label59
+            // 
+            this.label59.AutoSize = true;
+            this.label59.Location = new System.Drawing.Point(686, 324);
+            this.label59.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(64, 16);
+            this.label59.TabIndex = 101;
+            this.label59.Text = "Vrednost:";
+            // 
+            // textBox19
+            // 
+            this.textBox19.Enabled = false;
+            this.textBox19.Location = new System.Drawing.Point(688, 344);
+            this.textBox19.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.textBox19.Name = "textBox19";
+            this.textBox19.Size = new System.Drawing.Size(132, 22);
+            this.textBox19.TabIndex = 100;
+            this.textBox19.TextChanged += new System.EventHandler(this.textBox19_TextChanged);
+            // 
+            // checkBox17
+            // 
+            this.checkBox17.AutoSize = true;
+            this.checkBox17.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.checkBox17.Location = new System.Drawing.Point(563, 347);
+            this.checkBox17.Name = "checkBox17";
+            this.checkBox17.Size = new System.Drawing.Size(117, 20);
+            this.checkBox17.TabIndex = 99;
+            this.checkBox17.Text = "Cantragovanje:";
+            this.checkBox17.UseVisualStyleBackColor = true;
+            this.checkBox17.CheckedChanged += new System.EventHandler(this.checkBox17_CheckedChanged);
+            // 
+            // label63
+            // 
+            this.label63.AutoSize = true;
+            this.label63.Location = new System.Drawing.Point(830, 376);
+            this.label63.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label63.Name = "label63";
+            this.label63.Size = new System.Drawing.Size(42, 16);
+            this.label63.TabIndex = 113;
+            this.label63.Text = "Cena:";
+            // 
+            // label64
+            // 
+            this.label64.AutoSize = true;
+            this.label64.Location = new System.Drawing.Point(830, 399);
+            this.label64.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label64.Name = "label64";
+            this.label64.Size = new System.Drawing.Size(56, 16);
+            this.label64.TabIndex = 112;
+            this.label64.Text = "0.00 rsd.";
+            // 
+            // label65
+            // 
+            this.label65.AutoSize = true;
+            this.label65.Location = new System.Drawing.Point(686, 375);
+            this.label65.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label65.Name = "label65";
+            this.label65.Size = new System.Drawing.Size(64, 16);
+            this.label65.TabIndex = 111;
+            this.label65.Text = "Vrednost:";
+            // 
+            // textBox21
+            // 
+            this.textBox21.Enabled = false;
+            this.textBox21.Location = new System.Drawing.Point(688, 395);
+            this.textBox21.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.textBox21.Name = "textBox21";
+            this.textBox21.Size = new System.Drawing.Size(132, 22);
+            this.textBox21.TabIndex = 110;
+            this.textBox21.TextChanged += new System.EventHandler(this.textBox21_TextChanged);
+            // 
+            // checkBox19
+            // 
+            this.checkBox19.AutoSize = true;
+            this.checkBox19.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.checkBox19.Location = new System.Drawing.Point(553, 390);
+            this.checkBox19.Name = "checkBox19";
+            this.checkBox19.Size = new System.Drawing.Size(127, 36);
+            this.checkBox19.TabIndex = 109;
+            this.checkBox19.Text = "Lepljenje,kapital \r\ni pokazne trake:";
+            this.checkBox19.UseVisualStyleBackColor = true;
+            this.checkBox19.CheckedChanged += new System.EventHandler(this.checkBox19_CheckedChanged);
+            // 
+            // label66
+            // 
+            this.label66.AutoSize = true;
+            this.label66.Location = new System.Drawing.Point(830, 431);
+            this.label66.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label66.Name = "label66";
+            this.label66.Size = new System.Drawing.Size(42, 16);
+            this.label66.TabIndex = 118;
+            this.label66.Text = "Cena:";
+            // 
+            // label67
+            // 
+            this.label67.AutoSize = true;
+            this.label67.Location = new System.Drawing.Point(830, 454);
+            this.label67.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label67.Name = "label67";
+            this.label67.Size = new System.Drawing.Size(56, 16);
+            this.label67.TabIndex = 117;
+            this.label67.Text = "0.00 rsd.";
+            // 
+            // label68
+            // 
+            this.label68.AutoSize = true;
+            this.label68.Location = new System.Drawing.Point(686, 430);
+            this.label68.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label68.Name = "label68";
+            this.label68.Size = new System.Drawing.Size(64, 16);
+            this.label68.TabIndex = 116;
+            this.label68.Text = "Vrednost:";
+            // 
+            // textBox22
+            // 
+            this.textBox22.Enabled = false;
+            this.textBox22.Location = new System.Drawing.Point(688, 450);
+            this.textBox22.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.textBox22.Name = "textBox22";
+            this.textBox22.Size = new System.Drawing.Size(132, 22);
+            this.textBox22.TabIndex = 115;
+            this.textBox22.TextChanged += new System.EventHandler(this.textBox22_TextChanged);
+            // 
+            // checkBox20
+            // 
+            this.checkBox20.AutoSize = true;
+            this.checkBox20.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.checkBox20.Location = new System.Drawing.Point(595, 452);
+            this.checkBox20.Name = "checkBox20";
+            this.checkBox20.Size = new System.Drawing.Size(85, 20);
+            this.checkBox20.TabIndex = 114;
+            this.checkBox20.Text = "Koričenje:";
+            this.checkBox20.UseVisualStyleBackColor = true;
+            this.checkBox20.CheckedChanged += new System.EventHandler(this.checkBox20_CheckedChanged);
+            // 
+            // label69
+            // 
+            this.label69.AutoSize = true;
+            this.label69.Location = new System.Drawing.Point(830, 482);
+            this.label69.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label69.Name = "label69";
+            this.label69.Size = new System.Drawing.Size(42, 16);
+            this.label69.TabIndex = 123;
+            this.label69.Text = "Cena:";
+            // 
+            // label70
+            // 
+            this.label70.AutoSize = true;
+            this.label70.Location = new System.Drawing.Point(830, 505);
+            this.label70.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label70.Name = "label70";
+            this.label70.Size = new System.Drawing.Size(56, 16);
+            this.label70.TabIndex = 122;
+            this.label70.Text = "0.00 rsd.";
+            // 
+            // label71
+            // 
+            this.label71.AutoSize = true;
+            this.label71.Location = new System.Drawing.Point(686, 481);
+            this.label71.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label71.Name = "label71";
+            this.label71.Size = new System.Drawing.Size(64, 16);
+            this.label71.TabIndex = 121;
+            this.label71.Text = "Vrednost:";
+            // 
+            // textBox23
+            // 
+            this.textBox23.Enabled = false;
+            this.textBox23.Location = new System.Drawing.Point(688, 501);
+            this.textBox23.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.textBox23.Name = "textBox23";
+            this.textBox23.Size = new System.Drawing.Size(132, 22);
+            this.textBox23.TabIndex = 120;
+            this.textBox23.TextChanged += new System.EventHandler(this.textBox23_TextChanged);
+            // 
+            // checkBox21
+            // 
+            this.checkBox21.AutoSize = true;
+            this.checkBox21.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.checkBox21.Location = new System.Drawing.Point(574, 503);
+            this.checkBox21.Name = "checkBox21";
+            this.checkBox21.Size = new System.Drawing.Size(106, 20);
+            this.checkBox21.TabIndex = 119;
+            this.checkBox21.Text = "Izrada korica:";
+            this.checkBox21.UseVisualStyleBackColor = true;
+            this.checkBox21.CheckedChanged += new System.EventHandler(this.checkBox21_CheckedChanged);
+            // 
+            // label72
+            // 
+            this.label72.AutoSize = true;
+            this.label72.Location = new System.Drawing.Point(830, 534);
+            this.label72.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label72.Name = "label72";
+            this.label72.Size = new System.Drawing.Size(42, 16);
+            this.label72.TabIndex = 128;
+            this.label72.Text = "Cena:";
+            // 
+            // label73
+            // 
+            this.label73.AutoSize = true;
+            this.label73.Location = new System.Drawing.Point(830, 557);
+            this.label73.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label73.Name = "label73";
+            this.label73.Size = new System.Drawing.Size(56, 16);
+            this.label73.TabIndex = 127;
+            this.label73.Text = "0.00 rsd.";
+            // 
+            // label74
+            // 
+            this.label74.AutoSize = true;
+            this.label74.Location = new System.Drawing.Point(686, 533);
+            this.label74.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label74.Name = "label74";
+            this.label74.Size = new System.Drawing.Size(64, 16);
+            this.label74.TabIndex = 126;
+            this.label74.Text = "Vrednost:";
+            // 
+            // textBox24
+            // 
+            this.textBox24.Enabled = false;
+            this.textBox24.Location = new System.Drawing.Point(688, 553);
+            this.textBox24.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.textBox24.Name = "textBox24";
+            this.textBox24.Size = new System.Drawing.Size(132, 22);
+            this.textBox24.TabIndex = 125;
+            this.textBox24.TextChanged += new System.EventHandler(this.textBox24_TextChanged);
+            // 
+            // checkBox22
+            // 
+            this.checkBox22.AutoSize = true;
+            this.checkBox22.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.checkBox22.Location = new System.Drawing.Point(574, 555);
+            this.checkBox22.Name = "checkBox22";
+            this.checkBox22.Size = new System.Drawing.Size(106, 20);
+            this.checkBox22.TabIndex = 124;
+            this.checkBox22.Text = "Sečenje žica:";
+            this.checkBox22.UseVisualStyleBackColor = true;
+            this.checkBox22.CheckedChanged += new System.EventHandler(this.checkBox22_CheckedChanged);
+            // 
+            // label75
+            // 
+            this.label75.AutoSize = true;
+            this.label75.Location = new System.Drawing.Point(830, 585);
+            this.label75.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label75.Name = "label75";
+            this.label75.Size = new System.Drawing.Size(42, 16);
+            this.label75.TabIndex = 133;
+            this.label75.Text = "Cena:";
+            // 
+            // label76
+            // 
+            this.label76.AutoSize = true;
+            this.label76.Location = new System.Drawing.Point(830, 608);
+            this.label76.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label76.Name = "label76";
+            this.label76.Size = new System.Drawing.Size(56, 16);
+            this.label76.TabIndex = 132;
+            this.label76.Text = "0.00 rsd.";
+            // 
+            // label77
+            // 
+            this.label77.AutoSize = true;
+            this.label77.Location = new System.Drawing.Point(686, 584);
+            this.label77.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label77.Name = "label77";
+            this.label77.Size = new System.Drawing.Size(64, 16);
+            this.label77.TabIndex = 131;
+            this.label77.Text = "Vrednost:";
+            // 
+            // textBox25
+            // 
+            this.textBox25.Enabled = false;
+            this.textBox25.Location = new System.Drawing.Point(688, 604);
+            this.textBox25.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.textBox25.Name = "textBox25";
+            this.textBox25.Size = new System.Drawing.Size(132, 22);
+            this.textBox25.TabIndex = 130;
+            this.textBox25.TextChanged += new System.EventHandler(this.textBox25_TextChanged);
+            // 
+            // checkBox23
+            // 
+            this.checkBox23.AutoSize = true;
+            this.checkBox23.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.checkBox23.Location = new System.Drawing.Point(586, 607);
+            this.checkBox23.Name = "checkBox23";
+            this.checkBox23.Size = new System.Drawing.Size(94, 20);
+            this.checkBox23.TabIndex = 129;
+            this.checkBox23.Text = "Pakovanje:";
+            this.checkBox23.UseVisualStyleBackColor = true;
+            this.checkBox23.CheckedChanged += new System.EventHandler(this.checkBox23_CheckedChanged);
+            // 
+            // label81
+            // 
+            this.label81.AutoSize = true;
+            this.label81.Location = new System.Drawing.Point(455, 483);
+            this.label81.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label81.Name = "label81";
+            this.label81.Size = new System.Drawing.Size(42, 16);
+            this.label81.TabIndex = 143;
+            this.label81.Text = "Cena:";
+            // 
+            // label82
+            // 
+            this.label82.AutoSize = true;
+            this.label82.Location = new System.Drawing.Point(455, 506);
+            this.label82.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label82.Name = "label82";
+            this.label82.Size = new System.Drawing.Size(56, 16);
+            this.label82.TabIndex = 142;
+            this.label82.Text = "0.00 rsd.";
+            // 
+            // label83
+            // 
+            this.label83.AutoSize = true;
+            this.label83.Location = new System.Drawing.Point(311, 482);
+            this.label83.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label83.Name = "label83";
+            this.label83.Size = new System.Drawing.Size(64, 16);
+            this.label83.TabIndex = 141;
+            this.label83.Text = "Vrednost:";
+            // 
+            // textBox27
+            // 
+            this.textBox27.Enabled = false;
+            this.textBox27.Location = new System.Drawing.Point(313, 502);
+            this.textBox27.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.textBox27.Name = "textBox27";
+            this.textBox27.Size = new System.Drawing.Size(132, 22);
+            this.textBox27.TabIndex = 140;
+            this.textBox27.TextChanged += new System.EventHandler(this.textBox27_TextChanged);
+            // 
+            // checkBox25
+            // 
+            this.checkBox25.AutoSize = true;
+            this.checkBox25.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.checkBox25.Location = new System.Drawing.Point(217, 504);
+            this.checkBox25.Name = "checkBox25";
+            this.checkBox25.Size = new System.Drawing.Size(86, 20);
+            this.checkBox25.TabIndex = 139;
+            this.checkBox25.Text = "Toniranje:";
+            this.checkBox25.UseVisualStyleBackColor = true;
+            this.checkBox25.CheckedChanged += new System.EventHandler(this.checkBox25_CheckedChanged);
+            // 
+            // label60
+            // 
+            this.label60.AutoSize = true;
+            this.label60.Location = new System.Drawing.Point(1196, 67);
+            this.label60.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(42, 16);
+            this.label60.TabIndex = 148;
+            this.label60.Text = "Cena:";
+            // 
+            // label61
+            // 
+            this.label61.AutoSize = true;
+            this.label61.Location = new System.Drawing.Point(1196, 90);
+            this.label61.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label61.Name = "label61";
+            this.label61.Size = new System.Drawing.Size(56, 16);
+            this.label61.TabIndex = 147;
+            this.label61.Text = "0.00 rsd.";
+            // 
+            // label62
+            // 
+            this.label62.AutoSize = true;
+            this.label62.Location = new System.Drawing.Point(1052, 66);
+            this.label62.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label62.Name = "label62";
+            this.label62.Size = new System.Drawing.Size(64, 16);
+            this.label62.TabIndex = 146;
+            this.label62.Text = "Vrednost:";
+            // 
+            // textBox20
+            // 
+            this.textBox20.Enabled = false;
+            this.textBox20.Location = new System.Drawing.Point(1054, 86);
+            this.textBox20.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.textBox20.Name = "textBox20";
+            this.textBox20.Size = new System.Drawing.Size(132, 22);
+            this.textBox20.TabIndex = 145;
+            this.textBox20.TextChanged += new System.EventHandler(this.textBox20_TextChanged);
+            // 
+            // checkBox18
+            // 
+            this.checkBox18.AutoSize = true;
+            this.checkBox18.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.checkBox18.Location = new System.Drawing.Point(967, 87);
+            this.checkBox18.Name = "checkBox18";
+            this.checkBox18.Size = new System.Drawing.Size(79, 20);
+            this.checkBox18.TabIndex = 144;
+            this.checkBox18.Text = "Heftanje:";
+            this.checkBox18.UseVisualStyleBackColor = true;
+            this.checkBox18.CheckedChanged += new System.EventHandler(this.checkBox18_CheckedChanged);
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(1196, 119);
+            this.label39.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(42, 16);
+            this.label39.TabIndex = 153;
+            this.label39.Text = "Cena:";
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(1196, 142);
+            this.label40.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(56, 16);
+            this.label40.TabIndex = 152;
+            this.label40.Text = "0.00 rsd.";
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(1052, 118);
+            this.label41.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(64, 16);
+            this.label41.TabIndex = 151;
+            this.label41.Text = "Vrednost:";
+            // 
+            // textBox13
+            // 
+            this.textBox13.Enabled = false;
+            this.textBox13.Location = new System.Drawing.Point(1054, 138);
+            this.textBox13.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.textBox13.Name = "textBox13";
+            this.textBox13.Size = new System.Drawing.Size(132, 22);
+            this.textBox13.TabIndex = 150;
+            this.textBox13.TextChanged += new System.EventHandler(this.textBox13_TextChanged);
+            // 
+            // checkBox11
+            // 
+            this.checkBox11.AutoSize = true;
+            this.checkBox11.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.checkBox11.Location = new System.Drawing.Point(919, 140);
+            this.checkBox11.Name = "checkBox11";
+            this.checkBox11.Size = new System.Drawing.Size(127, 20);
+            this.checkBox11.TabIndex = 149;
+            this.checkBox11.Text = "Savijanje papira:";
+            this.checkBox11.UseVisualStyleBackColor = true;
+            this.checkBox11.CheckedChanged += new System.EventHandler(this.checkBox11_CheckedChanged);
+            // 
+            // label84
+            // 
+            this.label84.AutoSize = true;
+            this.label84.Location = new System.Drawing.Point(1196, 172);
+            this.label84.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label84.Name = "label84";
+            this.label84.Size = new System.Drawing.Size(42, 16);
+            this.label84.TabIndex = 158;
+            this.label84.Text = "Cena:";
+            // 
+            // label85
+            // 
+            this.label85.AutoSize = true;
+            this.label85.Location = new System.Drawing.Point(1196, 195);
+            this.label85.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label85.Name = "label85";
+            this.label85.Size = new System.Drawing.Size(56, 16);
+            this.label85.TabIndex = 157;
+            this.label85.Text = "0.00 rsd.";
+            // 
+            // label86
+            // 
+            this.label86.AutoSize = true;
+            this.label86.Location = new System.Drawing.Point(1052, 171);
+            this.label86.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label86.Name = "label86";
+            this.label86.Size = new System.Drawing.Size(64, 16);
+            this.label86.TabIndex = 156;
+            this.label86.Text = "Vrednost:";
+            // 
+            // textBox28
+            // 
+            this.textBox28.Enabled = false;
+            this.textBox28.Location = new System.Drawing.Point(1054, 191);
+            this.textBox28.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.textBox28.Name = "textBox28";
+            this.textBox28.Size = new System.Drawing.Size(132, 22);
+            this.textBox28.TabIndex = 155;
+            this.textBox28.TextChanged += new System.EventHandler(this.textBox28_TextChanged);
+            // 
+            // checkBox26
+            // 
+            this.checkBox26.AutoSize = true;
+            this.checkBox26.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.checkBox26.Location = new System.Drawing.Point(961, 193);
+            this.checkBox26.Name = "checkBox26";
+            this.checkBox26.Size = new System.Drawing.Size(85, 20);
+            this.checkBox26.TabIndex = 154;
+            this.checkBox26.Text = "Kasiranje:";
+            this.checkBox26.UseVisualStyleBackColor = true;
+            this.checkBox26.CheckedChanged += new System.EventHandler(this.checkBox26_CheckedChanged);
+            // 
+            // label87
+            // 
+            this.label87.AutoSize = true;
+            this.label87.Location = new System.Drawing.Point(1196, 226);
+            this.label87.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label87.Name = "label87";
+            this.label87.Size = new System.Drawing.Size(42, 16);
+            this.label87.TabIndex = 163;
+            this.label87.Text = "Cena:";
+            // 
+            // label88
+            // 
+            this.label88.AutoSize = true;
+            this.label88.Location = new System.Drawing.Point(1196, 249);
+            this.label88.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label88.Name = "label88";
+            this.label88.Size = new System.Drawing.Size(56, 16);
+            this.label88.TabIndex = 162;
+            this.label88.Text = "0.00 rsd.";
+            // 
+            // label89
+            // 
+            this.label89.AutoSize = true;
+            this.label89.Location = new System.Drawing.Point(1052, 225);
+            this.label89.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label89.Name = "label89";
+            this.label89.Size = new System.Drawing.Size(64, 16);
+            this.label89.TabIndex = 161;
+            this.label89.Text = "Vrednost:";
+            // 
+            // textBox29
+            // 
+            this.textBox29.Enabled = false;
+            this.textBox29.Location = new System.Drawing.Point(1054, 245);
+            this.textBox29.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.textBox29.Name = "textBox29";
+            this.textBox29.Size = new System.Drawing.Size(132, 22);
+            this.textBox29.TabIndex = 160;
+            this.textBox29.TextChanged += new System.EventHandler(this.textBox29_TextChanged);
+            // 
+            // checkBox27
+            // 
+            this.checkBox27.AutoSize = true;
+            this.checkBox27.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.checkBox27.Location = new System.Drawing.Point(971, 247);
+            this.checkBox27.Name = "checkBox27";
+            this.checkBox27.Size = new System.Drawing.Size(75, 20);
+            this.checkBox27.TabIndex = 159;
+            this.checkBox27.Text = "Digitala:";
+            this.checkBox27.UseVisualStyleBackColor = true;
+            this.checkBox27.CheckedChanged += new System.EventHandler(this.checkBox27_CheckedChanged);
+            // 
+            // label90
+            // 
+            this.label90.AutoSize = true;
+            this.label90.Location = new System.Drawing.Point(1196, 278);
+            this.label90.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label90.Name = "label90";
+            this.label90.Size = new System.Drawing.Size(42, 16);
+            this.label90.TabIndex = 168;
+            this.label90.Text = "Cena:";
+            // 
+            // label91
+            // 
+            this.label91.AutoSize = true;
+            this.label91.Location = new System.Drawing.Point(1196, 301);
+            this.label91.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label91.Name = "label91";
+            this.label91.Size = new System.Drawing.Size(56, 16);
+            this.label91.TabIndex = 167;
+            this.label91.Text = "0.00 rsd.";
+            // 
+            // label92
+            // 
+            this.label92.AutoSize = true;
+            this.label92.Location = new System.Drawing.Point(1052, 277);
+            this.label92.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label92.Name = "label92";
+            this.label92.Size = new System.Drawing.Size(64, 16);
+            this.label92.TabIndex = 166;
+            this.label92.Text = "Vrednost:";
+            // 
+            // textBox30
+            // 
+            this.textBox30.Enabled = false;
+            this.textBox30.Location = new System.Drawing.Point(1054, 297);
+            this.textBox30.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.textBox30.Name = "textBox30";
+            this.textBox30.Size = new System.Drawing.Size(132, 22);
+            this.textBox30.TabIndex = 165;
+            this.textBox30.TextChanged += new System.EventHandler(this.textBox30_TextChanged);
+            // 
+            // checkBox28
+            // 
+            this.checkBox28.AutoSize = true;
+            this.checkBox28.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.checkBox28.Location = new System.Drawing.Point(978, 300);
+            this.checkBox28.Name = "checkBox28";
+            this.checkBox28.Size = new System.Drawing.Size(68, 20);
+            this.checkBox28.TabIndex = 164;
+            this.checkBox28.Text = "Toneri:";
+            this.checkBox28.UseVisualStyleBackColor = true;
+            this.checkBox28.CheckedChanged += new System.EventHandler(this.checkBox28_CheckedChanged);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.Info;
+            this.button1.Enabled = false;
+            this.button1.Location = new System.Drawing.Point(940, 489);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(106, 37);
+            this.button1.TabIndex = 169;
+            this.button1.Text = "Sačuvaj";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.button3.Location = new System.Drawing.Point(940, 438);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(106, 37);
+            this.button3.TabIndex = 170;
+            this.button3.Text = "Učitaj";
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button4.Enabled = false;
+            this.button4.Location = new System.Drawing.Point(940, 589);
+            this.button4.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(106, 37);
+            this.button4.TabIndex = 171;
+            this.button4.Text = "Štampa";
+            this.button4.UseVisualStyleBackColor = false;
+            // 
+            // label93
+            // 
+            this.label93.AutoSize = true;
+            this.label93.Location = new System.Drawing.Point(1196, 12);
+            this.label93.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label93.Name = "label93";
+            this.label93.Size = new System.Drawing.Size(42, 16);
+            this.label93.TabIndex = 176;
+            this.label93.Text = "Cena:";
+            // 
+            // label94
+            // 
+            this.label94.AutoSize = true;
+            this.label94.Location = new System.Drawing.Point(1196, 35);
+            this.label94.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label94.Name = "label94";
+            this.label94.Size = new System.Drawing.Size(56, 16);
+            this.label94.TabIndex = 175;
+            this.label94.Text = "0.00 rsd.";
+            // 
+            // label95
+            // 
+            this.label95.AutoSize = true;
+            this.label95.Location = new System.Drawing.Point(1052, 11);
+            this.label95.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label95.Name = "label95";
+            this.label95.Size = new System.Drawing.Size(64, 16);
+            this.label95.TabIndex = 174;
+            this.label95.Text = "Vrednost:";
+            // 
+            // textBox31
+            // 
+            this.textBox31.Enabled = false;
+            this.textBox31.Location = new System.Drawing.Point(1054, 31);
+            this.textBox31.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.textBox31.Name = "textBox31";
+            this.textBox31.Size = new System.Drawing.Size(132, 22);
+            this.textBox31.TabIndex = 173;
+            this.textBox31.TextChanged += new System.EventHandler(this.textBox31_TextChanged);
+            // 
+            // checkBox29
+            // 
+            this.checkBox29.AutoSize = true;
+            this.checkBox29.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.checkBox29.Location = new System.Drawing.Point(977, 33);
+            this.checkBox29.Name = "checkBox29";
+            this.checkBox29.Size = new System.Drawing.Size(69, 20);
+            this.checkBox29.TabIndex = 172;
+            this.checkBox29.Text = "Jahači:";
+            this.checkBox29.UseVisualStyleBackColor = true;
+            this.checkBox29.CheckedChanged += new System.EventHandler(this.checkBox29_CheckedChanged);
+            // 
+            // label78
+            // 
+            this.label78.AutoSize = true;
+            this.label78.Location = new System.Drawing.Point(829, 16);
+            this.label78.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label78.Name = "label78";
+            this.label78.Size = new System.Drawing.Size(42, 16);
+            this.label78.TabIndex = 181;
+            this.label78.Text = "Cena:";
+            // 
+            // label79
+            // 
+            this.label79.AutoSize = true;
+            this.label79.Location = new System.Drawing.Point(829, 39);
+            this.label79.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label79.Name = "label79";
+            this.label79.Size = new System.Drawing.Size(56, 16);
+            this.label79.TabIndex = 180;
+            this.label79.Text = "0.00 rsd.";
+            // 
+            // label80
+            // 
+            this.label80.AutoSize = true;
+            this.label80.Location = new System.Drawing.Point(685, 15);
+            this.label80.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label80.Name = "label80";
+            this.label80.Size = new System.Drawing.Size(57, 16);
+            this.label80.TabIndex = 179;
+            this.label80.Text = "Količina:";
+            // 
+            // textBox26
+            // 
+            this.textBox26.Enabled = false;
+            this.textBox26.Location = new System.Drawing.Point(687, 35);
+            this.textBox26.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.textBox26.Name = "textBox26";
+            this.textBox26.Size = new System.Drawing.Size(132, 22);
+            this.textBox26.TabIndex = 178;
+            this.textBox26.TextChanged += new System.EventHandler(this.textBox26_TextChanged);
+            // 
+            // checkBox24
+            // 
+            this.checkBox24.AutoSize = true;
+            this.checkBox24.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.checkBox24.Location = new System.Drawing.Point(606, 37);
+            this.checkBox24.Name = "checkBox24";
+            this.checkBox24.Size = new System.Drawing.Size(74, 20);
+            this.checkBox24.TabIndex = 177;
+            this.checkBox24.Text = "Šivenje:";
+            this.checkBox24.UseVisualStyleBackColor = true;
+            this.checkBox24.CheckedChanged += new System.EventHandler(this.checkBox24_CheckedChanged);
+            // 
+            // comboBox7
+            // 
+            this.comboBox7.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox7.FormattingEnabled = true;
+            this.comboBox7.Location = new System.Drawing.Point(1054, 445);
+            this.comboBox7.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.comboBox7.Name = "comboBox7";
+            this.comboBox7.Size = new System.Drawing.Size(159, 24);
+            this.comboBox7.TabIndex = 182;
+            // 
+            // textBox32
+            // 
+            this.textBox32.Enabled = false;
+            this.textBox32.Location = new System.Drawing.Point(1056, 499);
+            this.textBox32.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.textBox32.Name = "textBox32";
+            this.textBox32.Size = new System.Drawing.Size(157, 22);
+            this.textBox32.TabIndex = 183;
+            // 
+            // label96
+            // 
+            this.label96.AutoSize = true;
+            this.label96.Location = new System.Drawing.Point(1054, 479);
+            this.label96.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label96.Name = "label96";
+            this.label96.Size = new System.Drawing.Size(44, 16);
+            this.label96.TabIndex = 184;
+            this.label96.Text = "Naziv:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1284, 711);
+            this.ClientSize = new System.Drawing.Size(1284, 651);
+            this.Controls.Add(this.label96);
+            this.Controls.Add(this.textBox32);
+            this.Controls.Add(this.comboBox7);
+            this.Controls.Add(this.label78);
+            this.Controls.Add(this.label79);
+            this.Controls.Add(this.label80);
+            this.Controls.Add(this.textBox26);
+            this.Controls.Add(this.checkBox24);
+            this.Controls.Add(this.label93);
+            this.Controls.Add(this.label94);
+            this.Controls.Add(this.label95);
+            this.Controls.Add(this.textBox31);
+            this.Controls.Add(this.checkBox29);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label90);
+            this.Controls.Add(this.label91);
+            this.Controls.Add(this.label92);
+            this.Controls.Add(this.textBox30);
+            this.Controls.Add(this.checkBox28);
+            this.Controls.Add(this.label87);
+            this.Controls.Add(this.label88);
+            this.Controls.Add(this.label89);
+            this.Controls.Add(this.textBox29);
+            this.Controls.Add(this.checkBox27);
+            this.Controls.Add(this.label84);
+            this.Controls.Add(this.label85);
+            this.Controls.Add(this.label86);
+            this.Controls.Add(this.textBox28);
+            this.Controls.Add(this.checkBox26);
+            this.Controls.Add(this.label39);
+            this.Controls.Add(this.label40);
+            this.Controls.Add(this.label41);
+            this.Controls.Add(this.textBox13);
+            this.Controls.Add(this.checkBox11);
+            this.Controls.Add(this.label60);
+            this.Controls.Add(this.label61);
+            this.Controls.Add(this.label62);
+            this.Controls.Add(this.textBox20);
+            this.Controls.Add(this.checkBox18);
+            this.Controls.Add(this.label81);
+            this.Controls.Add(this.label82);
+            this.Controls.Add(this.label83);
+            this.Controls.Add(this.textBox27);
+            this.Controls.Add(this.checkBox25);
+            this.Controls.Add(this.label75);
+            this.Controls.Add(this.label76);
+            this.Controls.Add(this.label77);
+            this.Controls.Add(this.textBox25);
+            this.Controls.Add(this.checkBox23);
+            this.Controls.Add(this.label72);
+            this.Controls.Add(this.label73);
+            this.Controls.Add(this.label74);
+            this.Controls.Add(this.textBox24);
+            this.Controls.Add(this.checkBox22);
+            this.Controls.Add(this.label69);
+            this.Controls.Add(this.label70);
+            this.Controls.Add(this.label71);
+            this.Controls.Add(this.textBox23);
+            this.Controls.Add(this.checkBox21);
+            this.Controls.Add(this.label66);
+            this.Controls.Add(this.label67);
+            this.Controls.Add(this.label68);
+            this.Controls.Add(this.textBox22);
+            this.Controls.Add(this.checkBox20);
+            this.Controls.Add(this.label63);
+            this.Controls.Add(this.label64);
+            this.Controls.Add(this.label65);
+            this.Controls.Add(this.textBox21);
+            this.Controls.Add(this.checkBox19);
+            this.Controls.Add(this.label57);
+            this.Controls.Add(this.label58);
+            this.Controls.Add(this.label59);
+            this.Controls.Add(this.textBox19);
+            this.Controls.Add(this.checkBox17);
+            this.Controls.Add(this.label54);
+            this.Controls.Add(this.label55);
+            this.Controls.Add(this.label56);
+            this.Controls.Add(this.textBox18);
+            this.Controls.Add(this.checkBox16);
+            this.Controls.Add(this.label51);
+            this.Controls.Add(this.label52);
+            this.Controls.Add(this.label53);
+            this.Controls.Add(this.textBox17);
+            this.Controls.Add(this.checkBox15);
+            this.Controls.Add(this.label48);
+            this.Controls.Add(this.label49);
+            this.Controls.Add(this.label50);
+            this.Controls.Add(this.textBox16);
+            this.Controls.Add(this.checkBox14);
+            this.Controls.Add(this.label45);
+            this.Controls.Add(this.label46);
+            this.Controls.Add(this.label47);
+            this.Controls.Add(this.textBox15);
+            this.Controls.Add(this.checkBox13);
+            this.Controls.Add(this.label42);
+            this.Controls.Add(this.label43);
+            this.Controls.Add(this.label44);
+            this.Controls.Add(this.textBox14);
+            this.Controls.Add(this.checkBox12);
             this.Controls.Add(this.checkBox10);
             this.Controls.Add(this.label36);
             this.Controls.Add(this.label37);
@@ -883,7 +2137,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.MaximumSize = new System.Drawing.Size(1300, 750);
+            this.MaximumSize = new System.Drawing.Size(1320, 690);
             this.Name = "Form1";
             this.Text = "Riža Kalkulator";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -961,6 +2215,107 @@
         private System.Windows.Forms.TextBox textBox12;
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.ComboBox comboBox6;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.CheckBox checkBox12;
+        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.TextBox textBox15;
+        private System.Windows.Forms.CheckBox checkBox13;
+        private System.Windows.Forms.Label label48;
+        private System.Windows.Forms.Label label49;
+        private System.Windows.Forms.Label label50;
+        private System.Windows.Forms.TextBox textBox16;
+        private System.Windows.Forms.CheckBox checkBox14;
+        private System.Windows.Forms.Label label51;
+        private System.Windows.Forms.Label label52;
+        private System.Windows.Forms.Label label53;
+        private System.Windows.Forms.TextBox textBox17;
+        private System.Windows.Forms.CheckBox checkBox15;
+        private System.Windows.Forms.Label label54;
+        private System.Windows.Forms.Label label55;
+        private System.Windows.Forms.Label label56;
+        private System.Windows.Forms.TextBox textBox18;
+        private System.Windows.Forms.CheckBox checkBox16;
+        private System.Windows.Forms.Label label57;
+        private System.Windows.Forms.Label label58;
+        private System.Windows.Forms.Label label59;
+        private System.Windows.Forms.TextBox textBox19;
+        private System.Windows.Forms.CheckBox checkBox17;
+        private System.Windows.Forms.Label label63;
+        private System.Windows.Forms.Label label64;
+        private System.Windows.Forms.Label label65;
+        private System.Windows.Forms.TextBox textBox21;
+        private System.Windows.Forms.CheckBox checkBox19;
+        private System.Windows.Forms.Label label66;
+        private System.Windows.Forms.Label label67;
+        private System.Windows.Forms.Label label68;
+        private System.Windows.Forms.TextBox textBox22;
+        private System.Windows.Forms.CheckBox checkBox20;
+        private System.Windows.Forms.Label label69;
+        private System.Windows.Forms.Label label70;
+        private System.Windows.Forms.Label label71;
+        private System.Windows.Forms.TextBox textBox23;
+        private System.Windows.Forms.CheckBox checkBox21;
+        private System.Windows.Forms.Label label72;
+        private System.Windows.Forms.Label label73;
+        private System.Windows.Forms.Label label74;
+        private System.Windows.Forms.TextBox textBox24;
+        private System.Windows.Forms.CheckBox checkBox22;
+        private System.Windows.Forms.Label label75;
+        private System.Windows.Forms.Label label76;
+        private System.Windows.Forms.Label label77;
+        private System.Windows.Forms.TextBox textBox25;
+        private System.Windows.Forms.CheckBox checkBox23;
+        private System.Windows.Forms.Label label81;
+        private System.Windows.Forms.Label label82;
+        private System.Windows.Forms.Label label83;
+        private System.Windows.Forms.TextBox textBox27;
+        private System.Windows.Forms.CheckBox checkBox25;
+        private System.Windows.Forms.Label label60;
+        private System.Windows.Forms.Label label61;
+        private System.Windows.Forms.Label label62;
+        private System.Windows.Forms.TextBox textBox20;
+        private System.Windows.Forms.CheckBox checkBox18;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.TextBox textBox13;
+        private System.Windows.Forms.CheckBox checkBox11;
+        private System.Windows.Forms.Label label84;
+        private System.Windows.Forms.Label label85;
+        private System.Windows.Forms.Label label86;
+        private System.Windows.Forms.TextBox textBox28;
+        private System.Windows.Forms.CheckBox checkBox26;
+        private System.Windows.Forms.Label label87;
+        private System.Windows.Forms.Label label88;
+        private System.Windows.Forms.Label label89;
+        private System.Windows.Forms.TextBox textBox29;
+        private System.Windows.Forms.CheckBox checkBox27;
+        private System.Windows.Forms.Label label90;
+        private System.Windows.Forms.Label label91;
+        private System.Windows.Forms.Label label92;
+        private System.Windows.Forms.TextBox textBox30;
+        private System.Windows.Forms.CheckBox checkBox28;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label label93;
+        private System.Windows.Forms.Label label94;
+        private System.Windows.Forms.Label label95;
+        private System.Windows.Forms.TextBox textBox31;
+        private System.Windows.Forms.CheckBox checkBox29;
+        private System.Windows.Forms.Label label78;
+        private System.Windows.Forms.Label label79;
+        private System.Windows.Forms.Label label80;
+        private System.Windows.Forms.TextBox textBox26;
+        private System.Windows.Forms.CheckBox checkBox24;
+        private System.Windows.Forms.ComboBox comboBox7;
+        private System.Windows.Forms.TextBox textBox32;
+        private System.Windows.Forms.Label label96;
     }
 }
 

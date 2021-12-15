@@ -51,32 +51,43 @@ namespace riza_kalkulator
 
         public double izabranaVrednostPloce = 0;
         public Ploce  izabranaPloca;
-        public double kolicinaPloca = 0;
+        public double kolicinaPloca = 1;
         public double sumaPloca = 0;
 
         public double izabranaVrednostPlastike = 0;
         public Plastike izabranaPlastika;
-        public double kolicinaPlastike = 0;
+        public double kolicinaPlastike = 1;
         public double sumaPlastike = 0;
 
         public double vrednostPripremePoPloci = 0;
         public double vrednostPranjaMasina = 0;
 
         public double sumaOtisaka = 0;
-        public double kolicinaOtisaka = 0;
-
-        public double vrednostDorade = 0;
-        public double vrednostFederPoveza = 0;
+        public double kolicinaOtisaka = 1;
 
         public double vrednostSivenja = 0;
-        public double kolicinaSivenja = 0;
+        public double kolicinaSivenja = 1;
         public double sumaSivenja = 0;
 
-        public double vrednostKorice = 0;
-        public double vrednostNumeracije = 0;
-        public double vrednostRicovanja = 0;
+        public double vrednostToniranja = 0;
+        public double vrednostFederPoveza = 0;
         public double vrednostStancovanja = 0;
-        public double vrednostStancAlata = 0;
+        public double vrednostRicovanja = 0;
+        public double vrednostNumeracije = 0;
+        public double vrednostSecenjaPapira = 0;
+        public double vrednostLepljenjaForzeca = 0;
+        public double vrednostCantragovanja = 0;
+        public double vrednostLKPT = 0;
+        public double vrednostKoricenja = 0;
+        public double vrednostIzradeKorica = 0;
+        public double vrednostSecenjaZica = 0;
+        public double vrednostPakovanja = 0;
+        public double vrednostJahaca = 0;
+        public double vrednostHeftanja = 0;
+        public double vrednostSavijanjaPapira = 0;
+        public double vrednostKasiranja = 0;
+        public double vrednostDigitale = 0;
+        public double vrednostTonera = 0;
 
         //REGEX
         public string regexDouble = "^\\d*\\.?\\d+$";
@@ -284,8 +295,7 @@ namespace riza_kalkulator
             }
         }
 
-        //SUMA
-        private void button2_Click(object sender, EventArgs e)
+        public void izracunaj()
         {
             suma = 0.0;
             if (textBox1.Text == "")
@@ -304,19 +314,67 @@ namespace riza_kalkulator
             {
                 sumaPapir4 = 0.0;
             }
+            if (textBox26.Text == "")
+            {
+                sumaSivenja = 0.0;
+            }
+            if (textBox12.Text == "")
+            {
+                sumaPlastike = 0.0;
+            }
+            if (textBox7.Text == "")
+            {
+                sumaPloca = 0.0;
+            }
+            if (textBox10.Text == "")
+            {
+                sumaOtisaka = 0.0;
+            }
 
             suma += sumaPapir1
                  + sumaPapir2
                  + sumaPapir3
                  + sumaPapir4
+                 + vrednostPripreme
                  + sumaPloca
                  + vrednostPripremePoPloci
-                 + vrednostPranjaMasina
                  + sumaOtisaka
+                 + vrednostPranjaMasina
+                 + vrednostToniranja
                  + vrednostFederPoveza
-                 + sumaPlastike;
+                 + sumaPlastike
+                 + sumaSivenja
+                 + vrednostStancovanja
+                 + vrednostRicovanja
+                 + vrednostNumeracije
+                 + vrednostSecenjaPapira
+                 + vrednostLepljenjaForzeca
+                 + vrednostCantragovanja
+                 + vrednostLKPT
+                 + vrednostKoricenja
+                 + vrednostIzradeKorica
+                 + vrednostSecenjaZica
+                 + vrednostPakovanja
+                 + vrednostJahaca
+                 + vrednostHeftanja
+                 + vrednostSavijanjaPapira
+                 + vrednostKasiranja
+                 + vrednostDigitale
+                 + vrednostTonera;
 
             textBox5.Text = suma.ToString("0.00") + " rsd.";
+            button1.Enabled = true;
+            button4.Enabled = true;
+            textBox32.Enabled = true;
+        }
+
+        //SUMA
+        private void button2_Click(object sender, EventArgs e)
+        {
+            
+
+        izracunaj();
+            
 
         }
         //ODABIR PAPIRA 
@@ -420,6 +478,7 @@ namespace riza_kalkulator
         {
             izabranPapir1=odabirPapira(comboBox1,label3);
             izabranaVrednostPapir1 = izabranPapir1.ukupnaVrednost;
+            textBox1.Text = "1";
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -449,6 +508,7 @@ namespace riza_kalkulator
         {
             izabranPapir2=odabirPapira(comboBox2, label7);
             izabranaVrednostPapir2 = izabranPapir2.ukupnaVrednost;
+            textBox2.Text = "1";
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -478,6 +538,7 @@ namespace riza_kalkulator
         {
             izabranPapir3=odabirPapira(comboBox3, label10);
             izabranaVrednostPapir3 = izabranPapir3.ukupnaVrednost;
+            textBox3.Text = "1";
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
@@ -506,6 +567,7 @@ namespace riza_kalkulator
         {
             izabranPapir4=odabirPapira(comboBox4, label14);
             izabranaVrednostPapir4 = izabranPapir4.ukupnaVrednost;
+            textBox4.Text = "1";
         }
 
         private void textBox4_TextChanged(object sender, EventArgs e)
@@ -539,14 +601,28 @@ namespace riza_kalkulator
             if (checkBox5.Checked)
             {
                 comboBox5.Enabled = true;
+                checkBox6.Enabled = true;
+                checkBox8.Enabled = true;
                 textBox7.Enabled = true;
+                if (!checkBox6.Checked)
+                {
+                    vrednostPripremePoPloci = 0.0;
+                }
+                if (!checkBox8.Checked)
+                {
+                    sumaOtisaka = 0.0;
+                }
             }
             else
             {
                 comboBox5.Enabled = false;
+                checkBox6.Enabled = false;
+                checkBox6.Checked = false;
+                checkBox8.Enabled = false;
+                checkBox8.Checked = false;
                 textBox7.Enabled = false;
                 textBox7.Text = "";
-                sumaPloca = 0;
+                sumaPloca = 0.0;
                 label22.Text = "0.00 rsd.";
             }
         }
@@ -562,9 +638,10 @@ namespace riza_kalkulator
                     break;
                 }
             }
-
+            
             sumaPloca = izabranaVrednostPloce * kolicinaPloca;
 
+            textBox7.Text = "1";
             label32.Text = "Količina*("+izabranaPloca.nazivPloce+": "+izabranaPloca.vrednost_otiska+"):";
             label22.Text = sumaPloca.ToString("0.00");
             label22.Text += " rsd.";
@@ -617,13 +694,13 @@ namespace riza_kalkulator
             if (checkBox6.Checked)
             {
                 textBox8.Enabled = false;
-                textBox8.Text = sumaPloca.ToString("0.00");
-                label25.Text = sumaPloca.ToString("0.00")+" rsd.";
                 vrednostPripremePoPloci = sumaPloca;
+                textBox8.Text = vrednostPripremePoPloci.ToString("0.00");
+                label25.Text = vrednostPripremePoPloci.ToString("0.00") + " rsd.";
             }
             else
             {
-                vrednostPripremePoPloci = 0;
+                vrednostPripremePoPloci = 0.00;
                 textBox8.Enabled = false;
                 textBox8.Text = "";
                 label25.Text = "0.00 rsd.";
@@ -656,10 +733,11 @@ namespace riza_kalkulator
             if (checkBox8.Checked)
             {
                 textBox10.Enabled = true;
-
+                textBox10.Text = "1";
             }
             else
             {
+                sumaOtisaka = 0.0;
                 textBox10.Enabled = false;
                 textBox10.Text = "";
                 label31.Text = "0.00 rsd.";
@@ -748,7 +826,7 @@ namespace riza_kalkulator
             }
 
             sumaPlastike = izabranaVrednostPlastike * kolicinaPlastike;
-
+            textBox12.Text = "1";
             label38.Text = "Količina*("+ izabranaVrednostPlastike +" rsd.):";
             label37.Text = sumaPlastike.ToString("0.00");
             label37.Text += " rsd.";
@@ -794,6 +872,390 @@ namespace riza_kalkulator
 
             label37.Text = sumaPlastike.ToString("0.00");
             label37.Text += " rsd.";
+        }
+
+        //SIVENJE
+        private void checkBox24_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox24.Checked)
+            {
+                textBox26.Enabled = true;
+                textBox26.Text = "1";
+                label80.Text="Količina*("+vrednostSivenja+"):";
+            }
+            else
+            {
+                textBox26.Enabled = false;
+                textBox26.Text = "";
+                label79.Text = "0.00 rsd.";
+            }
+        }
+
+        private void textBox26_TextChanged(object sender, EventArgs e)
+        {
+            int vrednost;
+            bool success = Int32.TryParse(textBox26.Text, out vrednost);
+            if (success)
+            {
+                kolicinaSivenja = vrednost;
+            }
+            else
+            {
+                if (textBox26.Text != "")
+                    MessageBox.Show("Nedozvoljen unos.");
+
+                textBox26.Text = "";
+                label79.Text = "0.00 rsd.";
+            }
+
+            sumaSivenja = vrednostSivenja * kolicinaSivenja;
+
+            label79.Text = sumaSivenja.ToString("0.00");
+            label79.Text += " rsd.";
+        }
+
+        //TONIRANJE
+        private void checkBox25_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox25.Checked)
+            {
+                textBox27.Enabled = true;
+            }
+            else
+            {
+                textBox27.Enabled = false;
+                textBox27.Text = "";
+                label82.Text = "0.00 rsd.";
+            }
+        }
+
+        private void textBox27_TextChanged(object sender, EventArgs e)
+        {
+            vrednostToniranja = unosVrednosti(textBox27, label82);
+        }
+
+        //STANCOVANJE
+        private void checkBox13_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox13.Checked)
+            {
+                textBox15.Enabled = true;
+            }
+            else
+            {
+                textBox15.Enabled = false;
+                textBox15.Text = "";
+                label46.Text = "0.00 rsd.";
+            }
+        }
+
+        private void textBox15_TextChanged(object sender, EventArgs e)
+        {
+            vrednostStancovanja = unosVrednosti(textBox15, label46);
+        }
+        //RICOVANJE
+        private void checkBox12_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox12.Checked)
+            {
+                textBox14.Enabled = true;
+            }
+            else
+            {
+                textBox14.Enabled = false;
+                textBox14.Text = "";
+                label43.Text = "0.00 rsd.";
+            }
+        }
+
+        private void textBox14_TextChanged(object sender, EventArgs e)
+        {
+            vrednostRicovanja = unosVrednosti(textBox14, label43);
+        }
+        //NUMERACIJA
+        private void checkBox14_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox14.Checked)
+            {
+                textBox16.Enabled = true;
+            }
+            else
+            {
+                textBox16.Enabled = false;
+                textBox16.Text = "";
+                label49.Text = "0.00 rsd.";
+            }
+        }
+
+        private void textBox16_TextChanged(object sender, EventArgs e)
+        {
+            vrednostNumeracije = unosVrednosti(textBox16, label49);
+        }
+        //SECENJE PAPIRA
+        private void checkBox15_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox15.Checked)
+            {
+                textBox17.Enabled = true;
+            }
+            else
+            {
+                textBox17.Enabled = false;
+                textBox17.Text = "";
+                label52.Text = "0.00 rsd.";
+            }
+        }
+
+        private void textBox17_TextChanged(object sender, EventArgs e)
+        {
+            vrednostSecenjaPapira = unosVrednosti(textBox17, label52);
+        }
+        //LEPLJENJE FORZECA
+        private void checkBox16_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox16.Checked)
+            {
+                textBox18.Enabled = true;
+            }
+            else
+            {
+                textBox18.Enabled = false;
+                textBox18.Text = "";
+                label55.Text = "0.00 rsd.";
+            }
+        }
+
+        private void textBox18_TextChanged(object sender, EventArgs e)
+        {
+            vrednostLepljenjaForzeca = unosVrednosti(textBox18, label55);
+        }
+        //CANTRAGOVANJE
+        private void checkBox17_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox17.Checked)
+            {
+                textBox19.Enabled = true;
+            }
+            else
+            {
+                textBox19.Enabled = false;
+                textBox19.Text = "";
+                label58.Text = "0.00 rsd.";
+            }
+        }
+
+        private void textBox19_TextChanged(object sender, EventArgs e)
+        {
+            vrednostCantragovanja = unosVrednosti(textBox19, label58);
+        }
+        //LKPT
+        private void checkBox19_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox19.Checked)
+            {
+                textBox21.Enabled = true;
+            }
+            else
+            {
+                textBox21.Enabled = false;
+                textBox21.Text = "";
+                label64.Text = "0.00 rsd.";
+            }
+        }
+
+        private void textBox21_TextChanged(object sender, EventArgs e)
+        {
+            vrednostLKPT = unosVrednosti(textBox21, label64);
+        }
+        //KORICENJE
+        private void checkBox20_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox20.Checked)
+            {
+                textBox22.Enabled = true;
+            }
+            else
+            {
+                textBox22.Enabled = false;
+                textBox22.Text = "";
+                label67.Text = "0.00 rsd.";
+            }
+        }
+
+        private void textBox22_TextChanged(object sender, EventArgs e)
+        {
+            vrednostKoricenja = unosVrednosti(textBox22, label67);
+        }
+        //IZRADA KORICA
+        private void checkBox21_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox21.Checked)
+            {
+                textBox23.Enabled = true;
+            }
+            else
+            {
+                textBox23.Enabled = false;
+                textBox23.Text = "";
+                label70.Text = "0.00 rsd.";
+            }
+        }
+
+        private void textBox23_TextChanged(object sender, EventArgs e)
+        {
+            vrednostIzradeKorica = unosVrednosti(textBox23, label70);
+        }
+        //SECENJE ZICA
+        private void checkBox22_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox22.Checked)
+            {
+                textBox24.Enabled = true;
+            }
+            else
+            {
+                textBox24.Enabled = false;
+                textBox24.Text = "";
+                label73.Text = "0.00 rsd.";
+            }
+        }
+
+        private void textBox24_TextChanged(object sender, EventArgs e)
+        {
+            vrednostSecenjaZica = unosVrednosti(textBox24, label73);
+        }
+        //PAKOVANJE
+        private void checkBox23_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox23.Checked)
+            {
+                textBox25.Enabled = true;
+            }
+            else
+            {
+                textBox25.Enabled = false;
+                textBox25.Text = "";
+                label76.Text = "0.00 rsd.";
+            }
+        }
+
+        private void textBox25_TextChanged(object sender, EventArgs e)
+        {
+            vrednostPakovanja = unosVrednosti(textBox25, label76);
+        }
+        //JAHACI
+        private void checkBox29_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox29.Checked)
+            {
+                textBox31.Enabled = true;
+            }
+            else
+            {
+                textBox31.Enabled = false;
+                textBox31.Text = "";
+                label94.Text = "0.00 rsd.";
+            }
+        }
+
+        private void textBox31_TextChanged(object sender, EventArgs e)
+        {
+            vrednostJahaca = unosVrednosti(textBox31, label94);
+        }
+        //HEFTANJE
+        private void checkBox18_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox18.Checked)
+            {
+                textBox20.Enabled = true;
+            }
+            else
+            {
+                textBox20.Enabled = false;
+                textBox20.Text = "";
+                label61.Text = "0.00 rsd.";
+            }
+        }
+
+        private void textBox20_TextChanged(object sender, EventArgs e)
+        {
+            vrednostHeftanja = unosVrednosti(textBox20, label61);
+        }
+        //SAVIJANJE PAPIRA
+        private void checkBox11_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox11.Checked)
+            {
+                textBox13.Enabled = true;
+            }
+            else
+            {
+                textBox13.Enabled = false;
+                textBox13.Text = "";
+                label40.Text = "0.00 rsd.";
+            }
+        }
+
+        private void textBox13_TextChanged(object sender, EventArgs e)
+        {
+            vrednostSavijanjaPapira = unosVrednosti(textBox13, label40);
+        }
+        //KASIRANJE
+        private void checkBox26_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox26.Checked)
+            {
+                textBox28.Enabled = true;
+            }
+            else
+            {
+                textBox28.Enabled = false;
+                textBox28.Text = "";
+                label85.Text = "0.00 rsd.";
+            }
+        }
+
+        private void textBox28_TextChanged(object sender, EventArgs e)
+        {
+            vrednostKasiranja = unosVrednosti(textBox28, label85);
+        }
+        //DIGITALA
+        private void checkBox27_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox27.Checked)
+            {
+                textBox29.Enabled = true;
+            }
+            else
+            {
+                textBox29.Enabled = false;
+                textBox29.Text = "";
+                label88.Text = "0.00 rsd.";
+            }
+        }
+
+        private void textBox29_TextChanged(object sender, EventArgs e)
+        {
+            vrednostDigitale = unosVrednosti(textBox29, label88);
+        }
+        //TONERI
+        private void checkBox28_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox28.Checked)
+            {
+                textBox30.Enabled = true;
+            }
+            else
+            {
+                textBox30.Enabled = false;
+                textBox30.Text = "";
+                label91.Text = "0.00 rsd.";
+            }
+        }
+
+        private void textBox30_TextChanged(object sender, EventArgs e)
+        {
+            vrednostTonera = unosVrednosti(textBox30, label91);
         }
     }
 }
