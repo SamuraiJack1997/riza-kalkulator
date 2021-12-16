@@ -98,6 +98,7 @@ namespace riza_kalkulator
         public double vrednostIzradeKesa = 0;
         public double vrednostIzradeKutija = 0;
         public double vrednostLajmovanja = 0;
+        public double vrednostBrojanjaListova = 0;
 
         //REGEX
         public string regexDouble = "^\\d*\\.?\\d+$";
@@ -305,6 +306,17 @@ namespace riza_kalkulator
             }
         }
 
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+            DialogResult result = MessageBox.Show("Da li ste sigurni da želite da izadjete?", "Riža kalkulator", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+
+        }
+
         public void izracunaj()
         {
             suma = 0.0;
@@ -354,6 +366,7 @@ namespace riza_kalkulator
                  + vrednostFederPoveza
                  + sumaPlastike
                  + sumaSivenja
+                 + vrednostBrojanjaListova
                  + vrednostStancovanja
                  + vrednostRicovanja
                  + vrednostNumeracije
@@ -380,9 +393,7 @@ namespace riza_kalkulator
                  + vrednostBusenjaRupa;
 
             textBox5.Text = suma.ToString("0.00") + " rsd.";
-            //button1.Enabled = true;
             button4.Enabled = true;
-            //textBox32.Enabled = true;
         }
 
         //SUMA
@@ -1408,6 +1419,25 @@ namespace riza_kalkulator
         {
             vrednostLajmovanja = unosVrednosti(textBox34, label101);
         }
+        //BROJANJE LISTOVA
+        private void checkBox37_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox37.Checked)
+            {
+                textBox32.Enabled = true;
+            }
+            else
+            {
+                textBox32.Enabled = false;
+                textBox32.Text = "";
+                label118.Text = "0.00 rsd.";
+            }
+        }
+
+        private void textBox32_TextChanged(object sender, EventArgs e)
+        {
+            vrednostBrojanjaListova = unosVrednosti(textBox32, label118);
+        }
         //PDF
         private void button4_Click(object sender, EventArgs e)
         {
@@ -1421,11 +1451,12 @@ namespace riza_kalkulator
                         PdfWriter.GetInstance(document, new FileStream(save.FileName, FileMode.Create));
 
                         Font mainFont = FontFactory.GetFont(BaseFont.HELVETICA, BaseFont.CP1250, 11);
+                        Font naslovFont = FontFactory.GetFont(BaseFont.HELVETICA, BaseFont.CP1250, 13);
                         document.Open();
 
                         PdfPTable table = new PdfPTable(3);
 
-                        PdfPCell naslov = new PdfPCell(new Phrase("Štamparija Riža - Ponuda",mainFont));
+                        PdfPCell naslov = new PdfPCell(new Phrase("Štamparija Riža - Ponuda", naslovFont));
                         PdfPCell naziv = new PdfPCell(new Phrase("Naziv", mainFont));
                         PdfPCell kolicina = new PdfPCell(new Phrase("Količina", mainFont));
                         PdfPCell cena = new PdfPCell(new Phrase("Cena", mainFont));
@@ -1440,6 +1471,8 @@ namespace riza_kalkulator
                         table.AddCell(naziv);
                         table.AddCell(kolicina);
                         table.AddCell(cena);
+
+                        String oznakaKolicine = "\u221A";
 
                         if (sumaPapir1 > 0)
                         {
@@ -1504,7 +1537,8 @@ namespace riza_kalkulator
                             naziv.HorizontalAlignment = 0;
                             table.AddCell(naziv);
 
-                            kolicina = new PdfPCell(new Phrase("\u2713", mainFont));
+                            kolicina = new PdfPCell(new Phrase(oznakaKolicine, mainFont));
+                            kolicina.BackgroundColor = BaseColor.LIGHT_GRAY;
                             kolicina.HorizontalAlignment = 1;
                             table.AddCell(kolicina);
 
@@ -1513,17 +1547,544 @@ namespace riza_kalkulator
                             table.AddCell(cena);
                         }
 
-                        document.Add(table);
+                        if (sumaPloca > 0)
+                        {
+                            naziv = new PdfPCell(new Phrase(izabranaPloca.nazivPloce, mainFont));
+                            naziv.HorizontalAlignment = 0;
+                            table.AddCell(naziv);
 
+                            kolicina = new PdfPCell(new Phrase(kolicinaPloca.ToString(), mainFont));
+                            kolicina.HorizontalAlignment = 1;
+                            table.AddCell(kolicina);
+
+                            cena = new PdfPCell(new Phrase(sumaPloca.ToString("0.00") + " rsd.", mainFont));
+                            cena.HorizontalAlignment = 2;
+                            table.AddCell(cena);
+                        }
+
+                        if (vrednostPripremePoPloci > 0)
+                        {
+                            naziv = new PdfPCell(new Phrase("Priprema po ploči", mainFont));
+                            naziv.HorizontalAlignment = 0;
+                            table.AddCell(naziv);
+
+                            kolicina = new PdfPCell(new Phrase(oznakaKolicine, mainFont));
+                            kolicina.HorizontalAlignment = 1;
+                            kolicina.BackgroundColor = BaseColor.LIGHT_GRAY;
+                            table.AddCell(kolicina);
+
+                            cena = new PdfPCell(new Phrase(vrednostPripreme.ToString("0.00") + " rsd.", mainFont));
+                            cena.HorizontalAlignment = 2;
+                            table.AddCell(cena);
+                        }
+
+                        if (sumaOtisaka > 0)
+                        {
+                            naziv = new PdfPCell(new Phrase("Otisci", mainFont));
+                            naziv.HorizontalAlignment = 0;
+                            table.AddCell(naziv);
+
+                            kolicina = new PdfPCell(new Phrase(kolicinaOtisaka.ToString(), mainFont));
+                            kolicina.HorizontalAlignment = 1;
+                            table.AddCell(kolicina);
+
+                            cena = new PdfPCell(new Phrase(sumaOtisaka.ToString("0.00") + " rsd.", mainFont));
+                            cena.HorizontalAlignment = 2;
+                            table.AddCell(cena);
+                        }
+
+                        if (vrednostPranjaMasina > 0)
+                        {
+                            naziv = new PdfPCell(new Phrase("Pranje mašina", mainFont));
+                            naziv.HorizontalAlignment = 0;
+                            table.AddCell(naziv);
+
+                            kolicina = new PdfPCell(new Phrase(oznakaKolicine, mainFont));
+                            kolicina.HorizontalAlignment = 1;
+                            kolicina.BackgroundColor = BaseColor.LIGHT_GRAY;
+                            table.AddCell(kolicina);
+
+                            cena = new PdfPCell(new Phrase(vrednostPranjaMasina.ToString("0.00") + " rsd.", mainFont));
+                            cena.HorizontalAlignment = 2;
+                            table.AddCell(cena);
+                        }
+
+                        if (vrednostToniranja > 0)
+                        {
+                            naziv = new PdfPCell(new Phrase("Toniranje", mainFont));
+                            naziv.HorizontalAlignment = 0;
+                            table.AddCell(naziv);
+
+                            kolicina = new PdfPCell(new Phrase(oznakaKolicine, mainFont));
+                            kolicina.HorizontalAlignment = 1;
+                            kolicina.BackgroundColor = BaseColor.LIGHT_GRAY;
+                            table.AddCell(kolicina);
+
+                            cena = new PdfPCell(new Phrase(vrednostToniranja.ToString("0.00") + " rsd.", mainFont));
+                            cena.HorizontalAlignment = 2;
+                            table.AddCell(cena);
+                        }
+
+                        if (vrednostFederPoveza > 0)
+                        {
+                            naziv = new PdfPCell(new Phrase("Feder povez", mainFont));
+                            naziv.HorizontalAlignment = 0;
+                            table.AddCell(naziv);
+
+                            kolicina = new PdfPCell(new Phrase(oznakaKolicine, mainFont));
+                            kolicina.HorizontalAlignment = 1;
+                            kolicina.BackgroundColor = BaseColor.LIGHT_GRAY;
+                            table.AddCell(kolicina);
+
+                            cena = new PdfPCell(new Phrase(vrednostFederPoveza.ToString("0.00") + " rsd.", mainFont));
+                            cena.HorizontalAlignment = 2;
+                            table.AddCell(cena);
+                        }
+
+                        if (sumaPlastike > 0)
+                        {
+                            naziv = new PdfPCell(new Phrase(izabranaPlastika.nazivPlastike, mainFont));
+                            naziv.HorizontalAlignment = 0;
+                            table.AddCell(naziv);
+
+                            kolicina = new PdfPCell(new Phrase(kolicinaPlastike.ToString(), mainFont));
+                            kolicina.HorizontalAlignment = 1;
+                            table.AddCell(kolicina);
+
+                            cena = new PdfPCell(new Phrase(sumaPlastike.ToString("0.00") + " rsd.", mainFont));
+                            cena.HorizontalAlignment = 2;
+                            table.AddCell(cena);
+                        }
+
+                        if (vrednostBusenjaRupa > 0)
+                        {
+                            naziv = new PdfPCell(new Phrase("Bušenje rupa(za kalendare i rek. blokove)", mainFont));
+                            naziv.HorizontalAlignment = 0;
+                            table.AddCell(naziv);
+
+                            kolicina = new PdfPCell(new Phrase(oznakaKolicine, mainFont));
+                            kolicina.HorizontalAlignment = 1;
+                            kolicina.BackgroundColor = BaseColor.LIGHT_GRAY;
+                            table.AddCell(kolicina);
+
+                            cena = new PdfPCell(new Phrase(vrednostBusenjaRupa.ToString("0.00") + " rsd.", mainFont));
+                            cena.HorizontalAlignment = 2;
+                            cena.VerticalAlignment = Element.ALIGN_MIDDLE;
+                            table.AddCell(cena);
+                        }
+
+                        if (sumaSivenja > 0)
+                        {
+                            naziv = new PdfPCell(new Phrase("Šivenje", mainFont));
+                            naziv.HorizontalAlignment = 0;
+                            table.AddCell(naziv);
+
+                            kolicina = new PdfPCell(new Phrase(kolicinaSivenja.ToString(), mainFont));
+                            kolicina.HorizontalAlignment = 1;
+                            table.AddCell(kolicina);
+
+                            cena = new PdfPCell(new Phrase(sumaSivenja.ToString("0.00") + " rsd.", mainFont));
+                            cena.HorizontalAlignment = 2;
+                            table.AddCell(cena);
+                        }
+
+                        if (vrednostStancovanja > 0)
+                        {
+                            naziv = new PdfPCell(new Phrase("Štancovanje", mainFont));
+                            naziv.HorizontalAlignment = 0;
+                            table.AddCell(naziv);
+
+                            kolicina = new PdfPCell(new Phrase(oznakaKolicine, mainFont));
+                            kolicina.HorizontalAlignment = 1;
+                            kolicina.BackgroundColor = BaseColor.LIGHT_GRAY;
+                            table.AddCell(kolicina);
+
+                            cena = new PdfPCell(new Phrase(vrednostStancovanja.ToString("0.00") + " rsd.", mainFont));
+                            cena.HorizontalAlignment = 2;
+                            table.AddCell(cena);
+                        }
+
+                        if (vrednostRicovanja > 0)
+                        {
+                            naziv = new PdfPCell(new Phrase("Ricovanje", mainFont));
+                            naziv.HorizontalAlignment = 0;
+                            table.AddCell(naziv);
+
+                            kolicina = new PdfPCell(new Phrase(oznakaKolicine, mainFont));
+                            kolicina.HorizontalAlignment = 1;
+                            kolicina.BackgroundColor = BaseColor.LIGHT_GRAY;
+                            table.AddCell(kolicina);
+
+                            cena = new PdfPCell(new Phrase(vrednostRicovanja.ToString("0.00") + " rsd.", mainFont));
+                            cena.HorizontalAlignment = 2;
+                            table.AddCell(cena);
+                        }
+
+                        if (vrednostNumeracije > 0)
+                        {
+                            naziv = new PdfPCell(new Phrase("Numeracija", mainFont));
+                            naziv.HorizontalAlignment = 0;
+                            table.AddCell(naziv);
+
+                            kolicina = new PdfPCell(new Phrase(oznakaKolicine, mainFont));
+                            kolicina.HorizontalAlignment = 1;
+                            kolicina.BackgroundColor = BaseColor.LIGHT_GRAY;
+                            table.AddCell(kolicina);
+
+                            cena = new PdfPCell(new Phrase(vrednostNumeracije.ToString("0.00") + " rsd.", mainFont));
+                            cena.HorizontalAlignment = 2;
+                            table.AddCell(cena);
+                        }
+
+                        if (vrednostSecenjaPapira > 0)
+                        {
+                            naziv = new PdfPCell(new Phrase("Sečenje papira", mainFont));
+                            naziv.HorizontalAlignment = 0;
+                            table.AddCell(naziv);
+
+                            kolicina = new PdfPCell(new Phrase(oznakaKolicine, mainFont));
+                            kolicina.HorizontalAlignment = 1;
+                            kolicina.BackgroundColor = BaseColor.LIGHT_GRAY;
+                            table.AddCell(kolicina);
+
+                            cena = new PdfPCell(new Phrase(vrednostSecenjaPapira.ToString("0.00") + " rsd.", mainFont));
+                            cena.HorizontalAlignment = 2;
+                            table.AddCell(cena);
+                        }
+
+                        if (vrednostLepljenjaForzeca > 0)
+                        {
+                            naziv = new PdfPCell(new Phrase("Lepljenje forzeca", mainFont));
+                            naziv.HorizontalAlignment = 0;
+                            table.AddCell(naziv);
+
+                            kolicina = new PdfPCell(new Phrase(oznakaKolicine, mainFont));
+                            kolicina.HorizontalAlignment = 1;
+                            kolicina.BackgroundColor = BaseColor.LIGHT_GRAY;
+                            table.AddCell(kolicina);
+
+                            cena = new PdfPCell(new Phrase(vrednostLepljenjaForzeca.ToString("0.00") + " rsd.", mainFont));
+                            cena.HorizontalAlignment = 2;
+                            table.AddCell(cena);
+                        }
+
+                        if (vrednostCantragovanja > 0)
+                        {
+                            naziv = new PdfPCell(new Phrase("Cantragovanje", mainFont));
+                            naziv.HorizontalAlignment = 0;
+                            table.AddCell(naziv);
+
+                            kolicina = new PdfPCell(new Phrase(oznakaKolicine, mainFont));
+                            kolicina.HorizontalAlignment = 1;
+                            kolicina.BackgroundColor = BaseColor.LIGHT_GRAY;
+                            table.AddCell(kolicina);
+
+                            cena = new PdfPCell(new Phrase(vrednostCantragovanja.ToString("0.00") + " rsd.", mainFont));
+                            cena.HorizontalAlignment = 2;
+                            table.AddCell(cena);
+                        }
+
+                        if (vrednostLKPT > 0)
+                        {
+                            naziv = new PdfPCell(new Phrase("Lepljenje,kapital i pokazne trake", mainFont));
+                            naziv.HorizontalAlignment = 0;
+                            table.AddCell(naziv);
+
+                            kolicina = new PdfPCell(new Phrase(oznakaKolicine, mainFont));
+                            kolicina.HorizontalAlignment = 1;
+                            kolicina.BackgroundColor = BaseColor.LIGHT_GRAY;
+                            table.AddCell(kolicina);
+
+                            cena = new PdfPCell(new Phrase(vrednostLKPT.ToString("0.00") + " rsd.", mainFont));
+                            cena.HorizontalAlignment = 2;
+                            cena.VerticalAlignment = Element.ALIGN_MIDDLE;
+                            table.AddCell(cena);
+                        }
+
+                        if (vrednostKoricenja > 0)
+                        {
+                            naziv = new PdfPCell(new Phrase("Koričenje", mainFont));
+                            naziv.HorizontalAlignment = 0;
+                            table.AddCell(naziv);
+
+                            kolicina = new PdfPCell(new Phrase(oznakaKolicine, mainFont));
+                            kolicina.HorizontalAlignment = 1;
+                            kolicina.BackgroundColor = BaseColor.LIGHT_GRAY;
+                            table.AddCell(kolicina);
+
+                            cena = new PdfPCell(new Phrase(vrednostKoricenja.ToString("0.00") + " rsd.", mainFont));
+                            cena.HorizontalAlignment = 2;
+                            table.AddCell(cena);
+                        }
+
+                        if (vrednostIzradeKorica > 0)
+                        {
+                            naziv = new PdfPCell(new Phrase("Izrada korica", mainFont));
+                            naziv.HorizontalAlignment = 0;
+                            table.AddCell(naziv);
+
+                            kolicina = new PdfPCell(new Phrase(oznakaKolicine, mainFont));
+                            kolicina.HorizontalAlignment = 1;
+                            kolicina.BackgroundColor = BaseColor.LIGHT_GRAY;
+                            table.AddCell(kolicina);
+
+                            cena = new PdfPCell(new Phrase(vrednostIzradeKorica.ToString("0.00") + " rsd.", mainFont));
+                            cena.HorizontalAlignment = 2;
+                            table.AddCell(cena);
+                        }
+
+                        if (vrednostSecenjaZica > 0)
+                        {
+                            naziv = new PdfPCell(new Phrase("Sečenje žica", mainFont));
+                            naziv.HorizontalAlignment = 0;
+                            table.AddCell(naziv);
+
+                            kolicina = new PdfPCell(new Phrase(oznakaKolicine, mainFont));
+                            kolicina.HorizontalAlignment = 1;
+                            kolicina.BackgroundColor = BaseColor.LIGHT_GRAY;
+                            table.AddCell(kolicina);
+
+                            cena = new PdfPCell(new Phrase(vrednostSecenjaZica.ToString("0.00") + " rsd.", mainFont));
+                            cena.HorizontalAlignment = 2;
+                            table.AddCell(cena);
+                        }
+
+                        if (vrednostPakovanja > 0)
+                        {
+                            naziv = new PdfPCell(new Phrase("Pakovanje", mainFont));
+                            naziv.HorizontalAlignment = 0;
+                            table.AddCell(naziv);
+
+                            kolicina = new PdfPCell(new Phrase(oznakaKolicine, mainFont));
+                            kolicina.HorizontalAlignment = 1;
+                            kolicina.BackgroundColor = BaseColor.LIGHT_GRAY;
+                            table.AddCell(kolicina);
+
+                            cena = new PdfPCell(new Phrase(vrednostPakovanja.ToString("0.00") + " rsd.", mainFont));
+                            cena.HorizontalAlignment = 2;
+                            table.AddCell(cena);
+                        }
+
+                        if (vrednostBrojanjaListova > 0)
+                        {
+                            naziv = new PdfPCell(new Phrase("Brojanje listova", mainFont));
+                            naziv.HorizontalAlignment = 0;
+                            table.AddCell(naziv);
+
+                            kolicina = new PdfPCell(new Phrase(oznakaKolicine, mainFont));
+                            kolicina.HorizontalAlignment = 1;
+                            kolicina.BackgroundColor = BaseColor.LIGHT_GRAY;
+                            table.AddCell(kolicina);
+
+                            cena = new PdfPCell(new Phrase(vrednostBrojanjaListova.ToString("0.00") + " rsd.", mainFont));
+                            cena.HorizontalAlignment = 2;
+                            table.AddCell(cena);
+                        }
+
+                        if (vrednostJahaca > 0)
+                        {
+                            naziv = new PdfPCell(new Phrase("Jahači", mainFont));
+                            naziv.HorizontalAlignment = 0;
+                            table.AddCell(naziv);
+
+                            kolicina = new PdfPCell(new Phrase(oznakaKolicine, mainFont));
+                            kolicina.HorizontalAlignment = 1;
+                            kolicina.BackgroundColor = BaseColor.LIGHT_GRAY;
+                            table.AddCell(kolicina);
+
+                            cena = new PdfPCell(new Phrase(vrednostJahaca.ToString("0.00") + " rsd.", mainFont));
+                            cena.HorizontalAlignment = 2;
+                            table.AddCell(cena);
+                        }
+
+                        if (vrednostHeftanja > 0)
+                        {
+                            naziv = new PdfPCell(new Phrase("Heftanje", mainFont));
+                            naziv.HorizontalAlignment = 0;
+                            table.AddCell(naziv);
+
+                            kolicina = new PdfPCell(new Phrase(oznakaKolicine, mainFont));
+                            kolicina.HorizontalAlignment = 1;
+                            kolicina.BackgroundColor = BaseColor.LIGHT_GRAY;
+                            table.AddCell(kolicina);
+
+                            cena = new PdfPCell(new Phrase(vrednostHeftanja.ToString("0.00") + " rsd.", mainFont));
+                            cena.HorizontalAlignment = 2;
+                            table.AddCell(cena);
+                        }
+
+                        if (vrednostSavijanjaPapira > 0)
+                        {
+                            naziv = new PdfPCell(new Phrase("Savijanje papira", mainFont));
+                            naziv.HorizontalAlignment = 0;
+                            table.AddCell(naziv);
+
+                            kolicina = new PdfPCell(new Phrase(oznakaKolicine, mainFont));
+                            kolicina.HorizontalAlignment = 1;
+                            kolicina.BackgroundColor = BaseColor.LIGHT_GRAY;
+                            table.AddCell(kolicina);
+
+                            cena = new PdfPCell(new Phrase(vrednostSavijanjaPapira.ToString("0.00") + " rsd.", mainFont));
+                            cena.HorizontalAlignment = 2;
+                            table.AddCell(cena);
+                        }
+
+                        if (vrednostKasiranja> 0)
+                        {
+                            naziv = new PdfPCell(new Phrase("Kasiranje", mainFont));
+                            naziv.HorizontalAlignment = 0;
+                            table.AddCell(naziv);
+
+                            kolicina = new PdfPCell(new Phrase(oznakaKolicine, mainFont));
+                            kolicina.HorizontalAlignment = 1;
+                            kolicina.BackgroundColor = BaseColor.LIGHT_GRAY;
+                            table.AddCell(kolicina);
+
+                            cena = new PdfPCell(new Phrase(vrednostKasiranja.ToString("0.00") + " rsd.", mainFont));
+                            cena.HorizontalAlignment = 2;
+                            table.AddCell(cena);
+                        }
+
+                        if (vrednostDigitale > 0)
+                        {
+                            naziv = new PdfPCell(new Phrase("Digitala", mainFont));
+                            naziv.HorizontalAlignment = 0;
+                            table.AddCell(naziv);
+
+                            kolicina = new PdfPCell(new Phrase(oznakaKolicine, mainFont));
+                            kolicina.HorizontalAlignment = 1;
+                            kolicina.BackgroundColor = BaseColor.LIGHT_GRAY;
+                            table.AddCell(kolicina);
+
+                            cena = new PdfPCell(new Phrase(vrednostDigitale.ToString("0.00") + " rsd.", mainFont));
+                            cena.HorizontalAlignment = 2;
+                            table.AddCell(cena);
+                        }
+
+                        if (vrednostPerforacije> 0)
+                        {
+                            naziv = new PdfPCell(new Phrase("Perforacija", mainFont));
+                            naziv.HorizontalAlignment = 0;
+                            table.AddCell(naziv);
+
+                            kolicina = new PdfPCell(new Phrase(oznakaKolicine, mainFont));
+                            kolicina.HorizontalAlignment = 1;
+                            kolicina.BackgroundColor = BaseColor.LIGHT_GRAY;
+                            table.AddCell(kolicina);
+
+                            cena = new PdfPCell(new Phrase(vrednostPerforacije.ToString("0.00") + " rsd.", mainFont));
+                            cena.HorizontalAlignment = 2;
+                            table.AddCell(cena);
+                        }
+
+                        if (vrednostBigovanja > 0)
+                        {
+                            naziv = new PdfPCell(new Phrase("Bigovanje", mainFont));
+                            naziv.HorizontalAlignment = 0;
+                            table.AddCell(naziv);
+
+                            kolicina = new PdfPCell(new Phrase(oznakaKolicine, mainFont));
+                            kolicina.HorizontalAlignment = 1;
+                            kolicina.BackgroundColor = BaseColor.LIGHT_GRAY;
+                            table.AddCell(kolicina);
+
+                            cena = new PdfPCell(new Phrase(vrednostBigovanja.ToString("0.00") + " rsd.", mainFont));
+                            cena.HorizontalAlignment = 2;
+                            table.AddCell(cena);
+                        }
+
+                        if (vrednostZlatotiska > 0)
+                        {
+                            naziv = new PdfPCell(new Phrase("Zlatotisak", mainFont));
+                            naziv.HorizontalAlignment = 0;
+                            table.AddCell(naziv);
+
+                            kolicina = new PdfPCell(new Phrase(oznakaKolicine, mainFont));
+                            kolicina.HorizontalAlignment = 1;
+                            kolicina.BackgroundColor = BaseColor.LIGHT_GRAY;
+                            table.AddCell(kolicina);
+
+                            cena = new PdfPCell(new Phrase(vrednostZlatotiska.ToString("0.00") + " rsd.", mainFont));
+                            cena.HorizontalAlignment = 2;
+                            table.AddCell(cena);
+                        }
+
+                        if (vrednostKlisea > 0)
+                        {
+                            naziv = new PdfPCell(new Phrase("Kliše", mainFont));
+                            naziv.HorizontalAlignment = 0;
+                            table.AddCell(naziv);
+
+                            kolicina = new PdfPCell(new Phrase(oznakaKolicine, mainFont));
+                            kolicina.HorizontalAlignment = 1;
+                            kolicina.BackgroundColor = BaseColor.LIGHT_GRAY;
+                            table.AddCell(kolicina);
+
+                            cena = new PdfPCell(new Phrase(vrednostKlisea.ToString("0.00") + " rsd.", mainFont));
+                            cena.HorizontalAlignment = 2;
+                            table.AddCell(cena);
+                        }
+
+                        if (vrednostIzradeKesa > 0)
+                        {
+                            naziv = new PdfPCell(new Phrase("Izrada kesa", mainFont));
+                            naziv.HorizontalAlignment = 0;
+                            table.AddCell(naziv);
+
+                            kolicina = new PdfPCell(new Phrase(oznakaKolicine, mainFont));
+                            kolicina.HorizontalAlignment = 1;
+                            kolicina.BackgroundColor = BaseColor.LIGHT_GRAY;
+                            table.AddCell(kolicina);
+
+                            cena = new PdfPCell(new Phrase(vrednostIzradeKesa.ToString("0.00") + " rsd.", mainFont));
+                            cena.HorizontalAlignment = 2;
+                            table.AddCell(cena);
+                        }
+
+                        if (vrednostIzradeKutija > 0)
+                        {
+                            naziv = new PdfPCell(new Phrase("Izrada kutija", mainFont));
+                            naziv.HorizontalAlignment = 0;
+                            table.AddCell(naziv);
+
+                            kolicina = new PdfPCell(new Phrase(oznakaKolicine, mainFont));
+                            kolicina.HorizontalAlignment = 1;
+                            kolicina.BackgroundColor = BaseColor.LIGHT_GRAY;
+                            table.AddCell(kolicina);
+
+                            cena = new PdfPCell(new Phrase(vrednostIzradeKutija.ToString("0.00") + " rsd.", mainFont));
+                            cena.HorizontalAlignment = 2;
+                            table.AddCell(cena);
+                        }
+
+                        if (vrednostLajmovanja > 0)
+                        {
+                            naziv = new PdfPCell(new Phrase("Lajmovanje", mainFont));
+                            naziv.HorizontalAlignment = 0;
+                            table.AddCell(naziv);
+
+                            kolicina = new PdfPCell(new Phrase(oznakaKolicine, mainFont));
+                            kolicina.HorizontalAlignment = 1;
+                            kolicina.BackgroundColor = BaseColor.LIGHT_GRAY;
+                            table.AddCell(kolicina);
+
+                            cena = new PdfPCell(new Phrase(vrednostLajmovanja.ToString("0.00") + " rsd.", mainFont));
+                            cena.HorizontalAlignment = 2;
+                            table.AddCell(cena);
+                        }
+
+                        document.Add(table);
+                        
                         String footer1 = "";
                         footer1 += "\n________________________________________________________________________________________";
-                        footer1 += "\n\n                                                                                                              Ukupna cena: " + suma.ToString("0.00") + " rsd.";
-                        footer1 += "\n________________________________________________________________________________________\n\n\n";
-                        footer1 += "\n  Izdavač ponude:______________________                                           Primio:______________________";
+                        footer1 += "\n\n                                                                                                                      Ukupna cena: " + suma.ToString("0.00") + " rsd.";
+                        footer1 += "\n________________________________________________________________________________________\n\n";
+                        footer1 += "\n  Izdavač ponude: _____________________                                           Primio: _____________________";
+                        footer1 += "\n\n                 Datum: "+DateTime.Now.ToString("dd/MM/yyyy")+" god.";
                         var footer_para1 = new Paragraph(footer1, mainFont);
                         document.Add(footer_para1);
 
-                        MessageBox.Show("Uspešno čuvanje PDF-a.", "Riža kalkulator", MessageBoxButtons.OK);
+                        MessageBox.Show("Uspešno čuvanje PDF-a.", "Riža kalkulator", MessageBoxButtons.OK,MessageBoxIcon.Information);
                     }catch (Exception ex)
                     {
                         MessageBox.Show(ex.Message,"Greška prilikom čuvanja PDF-a!",MessageBoxButtons.OK,MessageBoxIcon.Error);
@@ -1535,5 +2096,7 @@ namespace riza_kalkulator
                 }
             }
         }
+
+        
     }
 }

@@ -227,6 +227,11 @@
             this.label117 = new System.Windows.Forms.Label();
             this.textBox39 = new System.Windows.Forms.TextBox();
             this.checkBox36 = new System.Windows.Forms.CheckBox();
+            this.label96 = new System.Windows.Forms.Label();
+            this.label118 = new System.Windows.Forms.Label();
+            this.label119 = new System.Windows.Forms.Label();
+            this.textBox32 = new System.Windows.Forms.TextBox();
+            this.checkBox37 = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // comboBox1
@@ -523,12 +528,13 @@
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.GrayText;
+            this.button2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(744, 646);
+            this.button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button2.Location = new System.Drawing.Point(1016, 645);
             this.button2.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(185, 50);
+            this.button2.Size = new System.Drawing.Size(80, 50);
             this.button2.TabIndex = 28;
             this.button2.Text = "Izračunaj";
             this.button2.UseVisualStyleBackColor = false;
@@ -538,7 +544,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(951, 653);
+            this.label17.Location = new System.Drawing.Point(1103, 652);
             this.label17.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(90, 16);
@@ -548,11 +554,11 @@
             // textBox5
             // 
             this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(952, 673);
+            this.textBox5.Location = new System.Drawing.Point(1106, 672);
             this.textBox5.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.textBox5.Name = "textBox5";
             this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(300, 22);
+            this.textBox5.Size = new System.Drawing.Size(155, 22);
             this.textBox5.TabIndex = 29;
             // 
             // checkBox4
@@ -1861,10 +1867,10 @@
             this.button4.BackColor = System.Drawing.SystemColors.Info;
             this.button4.Enabled = false;
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(549, 646);
+            this.button4.Location = new System.Drawing.Point(926, 645);
             this.button4.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(185, 50);
+            this.button4.Size = new System.Drawing.Size(80, 50);
             this.button4.TabIndex = 171;
             this.button4.Text = "Sačuvaj PDF";
             this.button4.UseVisualStyleBackColor = false;
@@ -2347,11 +2353,69 @@
             this.checkBox36.UseVisualStyleBackColor = true;
             this.checkBox36.CheckedChanged += new System.EventHandler(this.checkBox36_CheckedChanged);
             // 
+            // label96
+            // 
+            this.label96.AutoSize = true;
+            this.label96.Location = new System.Drawing.Point(829, 638);
+            this.label96.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label96.Name = "label96";
+            this.label96.Size = new System.Drawing.Size(42, 16);
+            this.label96.TabIndex = 224;
+            this.label96.Text = "Cena:";
+            // 
+            // label118
+            // 
+            this.label118.AutoSize = true;
+            this.label118.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label118.Location = new System.Drawing.Point(829, 661);
+            this.label118.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label118.Name = "label118";
+            this.label118.Size = new System.Drawing.Size(65, 16);
+            this.label118.TabIndex = 223;
+            this.label118.Text = "0.00 rsd.";
+            // 
+            // label119
+            // 
+            this.label119.AutoSize = true;
+            this.label119.Location = new System.Drawing.Point(685, 637);
+            this.label119.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label119.Name = "label119";
+            this.label119.Size = new System.Drawing.Size(64, 16);
+            this.label119.TabIndex = 222;
+            this.label119.Text = "Vrednost:";
+            // 
+            // textBox32
+            // 
+            this.textBox32.Enabled = false;
+            this.textBox32.Location = new System.Drawing.Point(687, 657);
+            this.textBox32.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.textBox32.Name = "textBox32";
+            this.textBox32.Size = new System.Drawing.Size(132, 22);
+            this.textBox32.TabIndex = 221;
+            this.textBox32.TextChanged += new System.EventHandler(this.textBox32_TextChanged);
+            // 
+            // checkBox37
+            // 
+            this.checkBox37.AutoSize = true;
+            this.checkBox37.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.checkBox37.Location = new System.Drawing.Point(559, 658);
+            this.checkBox37.Name = "checkBox37";
+            this.checkBox37.Size = new System.Drawing.Size(121, 20);
+            this.checkBox37.TabIndex = 220;
+            this.checkBox37.Text = "Brojanje listova:";
+            this.checkBox37.UseVisualStyleBackColor = true;
+            this.checkBox37.CheckedChanged += new System.EventHandler(this.checkBox37_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1284, 711);
+            this.Controls.Add(this.label96);
+            this.Controls.Add(this.label118);
+            this.Controls.Add(this.label119);
+            this.Controls.Add(this.textBox32);
+            this.Controls.Add(this.checkBox37);
             this.Controls.Add(this.label115);
             this.Controls.Add(this.label116);
             this.Controls.Add(this.label117);
@@ -2556,6 +2620,7 @@
             this.MaximumSize = new System.Drawing.Size(1300, 750);
             this.Name = "Form1";
             this.Text = "Riža Kalkulator";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -2762,6 +2827,11 @@
         private System.Windows.Forms.Label label117;
         private System.Windows.Forms.TextBox textBox39;
         private System.Windows.Forms.CheckBox checkBox36;
+        private System.Windows.Forms.Label label96;
+        private System.Windows.Forms.Label label118;
+        private System.Windows.Forms.Label label119;
+        private System.Windows.Forms.TextBox textBox32;
+        private System.Windows.Forms.CheckBox checkBox37;
     }
 }
 
