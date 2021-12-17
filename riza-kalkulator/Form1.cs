@@ -1573,7 +1573,7 @@ namespace riza_kalkulator
                             kolicina.BackgroundColor = BaseColor.LIGHT_GRAY;
                             table.AddCell(kolicina);
 
-                            cena = new PdfPCell(new Phrase(vrednostPripreme.ToString("0.00") + " rsd.", mainFont));
+                            cena = new PdfPCell(new Phrase(vrednostPripremePoPloci.ToString("0.00") + " rsd.", mainFont));
                             cena.HorizontalAlignment = 2;
                             table.AddCell(cena);
                         }
